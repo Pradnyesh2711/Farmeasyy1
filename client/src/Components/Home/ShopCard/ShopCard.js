@@ -11,10 +11,10 @@ const ShopCard = () => {
       {/* Shop Card */}
       <div className="w-full text-center py-8">
         <h1 className="font-medium text-4xl font-display tracking-wide text-teal-700">
-          Your Nearest Medicine Store
+          Your Nearest Farmers
         </h1>
         <p className="font-sans text-base tracking-wide text-gray-700 mt-2">
-          Search for Medicine, Filter by your location
+          Search for Fresh Products, Filter by your location
         </p>
       </div>
       <div className="cards flex flex-wrap justify-center">
@@ -93,7 +93,7 @@ const ShopCard = () => {
                       d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                     ></path>
                   </svg>
-                  Visit Store
+                  See and Visit FarmyStore
                 </button>
               </Link>
             </div>

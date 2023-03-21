@@ -9,7 +9,7 @@ const VendorCTA = () => {
             <div className="flex flex-col justify-center">
               <div className="max-w-xl mb-6">
                 <h2 className="max-w-lg mb-6 font-display text-3xl font-semibold tracking-wide text-gray-900 sm:text-4xl sm:leading-tight ">
-                  Add your local pharmacy online
+                  Add your Farmer Production Online
                   <span className="relative px-1">
                     <div className="absolute inset-x-0 bottom-0 h-2 transform -skew-x-12 bg-teal-accent-700"></div>
                     <span className="relative inline-block text-teal-accent-700">
@@ -62,7 +62,7 @@ const VendorCTA = () => {
                         ></polygon>
                       </svg>
                     </span>
-                    Create your shop profile
+                    Create your profile
                   </li>
                   <li className="flex">
                     <span className="mr-1">
@@ -155,7 +155,7 @@ const VendorCTA = () => {
         <div className="text-white bg-teal-500 border-teal-400 rounded-none card card-body sm:rounded-lg">
           <div className="flex flex-col items-center justify-between px-2 py-4 lg:flex-row sm:py-8 sm:px-4">
             <p className="mb-6 text-lg lg:text-xl font-sans font-medium lg:mb-0 text-white tracking-wide">
-              Open your local pharmacy turn into online store and increase your
+              Open your FarmyStore and turn into online store and increase your
               sells. It's totally free!
             </p>
             <button className="flex py-2 px-6 rounded shadow-3xl bg-teal-50 focus:outline-none active:bg-teal-400 text-teal-600 font-medium transition duration-150 ease-in-out hover:bg-teal-100 hover:text-teal-800">

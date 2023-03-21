@@ -16,7 +16,7 @@ const Blog = () => {
         <div className="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
           <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-3xl">
             <img
-              src="https://wpbingosite.com/wordpress/fuho/wp-content/uploads/2018/05/blog-1-720x484.jpg"
+              src=""
               className="object-cover w-full h-64"
               alt=""
             />
@@ -55,7 +55,7 @@ const Blog = () => {
 
           <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-3xl">
             <img
-              src="https://wpbingosite.com/wordpress/fuho/wp-content/uploads/2018/05/blog-4-720x484.jpg"
+              src=""
               className="object-cover w-full h-64"
               alt=""
             />
@@ -94,7 +94,7 @@ const Blog = () => {
 
           <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-3xl">
             <img
-              src="https://medik.wpengine.com/wp-content/uploads/2019/01/blog9-1024x648.jpg"
+              src=""
               className="object-cover w-full h-64"
               alt=""
             />

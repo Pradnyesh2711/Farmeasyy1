@@ -7,25 +7,25 @@ import { Link } from 'react-router-dom';
 const products = [
     {
       id: 1,
-      name: 'Vitamin C Medicine', 
+      name: 'Onions', 
       href: '#',
       color: 'Salmon',
       price: '90.00',
       quantity: 1,
       imageSrc:
-        'https://wpbingosite.com/wordpress/fuho/wp-content/uploads/2020/12/Image-36-1-480x480.jpg',
+        '',
       imageAlt:
         'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
     },
     {
       id: 2,
-      name: 'Stomach Medicine',
+      name: 'Tomato',
       href: '#',
       color: 'Blue',
       price: '32.00',
       quantity: 1,
       imageSrc:
-        'https://wpbingosite.com/wordpress/fuho/wp-content/uploads/2020/12/Image-26-1-480x480.jpg',
+        '',
       imageAlt:
         'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
     },
