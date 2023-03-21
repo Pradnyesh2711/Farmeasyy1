@@ -69,7 +69,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
             >
               <img src={logo} alt="logo" className="object-contain w-10" />
               <span className="ml-2 text-base sm:text-lg font-display font-semibold tracking-wide leading-snug text-teal-50 uppercase">
-                E-Pharmacy
+                FarmEasy
               </span>
             </div>
           </Link>
@@ -84,10 +84,10 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
             src="https://www.pngitem.com/pimgs/m/255-2558624_pharmacy-medical-logo-hd-png-download.png"
           />
           <h2 className="font-display text-xl font-semibold tracking-wide text-teal-50 title-font text-center">
-            Medicine Store
+            Farmer Production
           </h2>
           <p className="font-sans text-sm font-semibold tracking-wide text-teal-100 title-font text-center">
-            vendor@gmail.com
+            owner@gmail.com
           </p>
         </div>
 

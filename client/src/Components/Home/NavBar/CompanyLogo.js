@@ -8,8 +8,8 @@ const CompanyLogo = () => {
       <Link
         to="/"
         href="/"
-        aria-label="E-Pharmacy"
-        title="E-Pharmacy"
+        aria-label="FarmEasy"
+        title="FarmEasy"
         className="inline-flex items-center mr-8"
       >
         <img src={logo} alt="logo" className="w-10" />

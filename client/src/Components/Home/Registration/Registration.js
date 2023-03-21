@@ -73,10 +73,10 @@ const Registration = ({ setIsAccount }) => {
           }}
         >
           <div className="pt-2 font-display text-5xl font-semibold text-left text-teal-500 my-18">
-            Medicine
+            FarmEasy
           </div>
           <div className="text-left text-gray-800 mt-2">
-            Let the Power of Beats flow in you
+            Lets Conect with Fresh Producers
           </div>
           <div className="inline-block px-4 py-2 mt-5 text-center text-white bg-teal-500 rounded hover:bg-teal-700 pointer-cursor">
             Learn More

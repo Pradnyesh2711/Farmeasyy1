@@ -30,7 +30,7 @@ const NavLinks = () => {
           title="Product pricing"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-accent-700"
         >
-          Medicine
+          Products
         </a>
       </li>
       <li>
@@ -40,7 +40,7 @@ const NavLinks = () => {
           title="Blog"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-accent-700"
         >
-          Blog
+          About
         </a>
       </li>
     </>
