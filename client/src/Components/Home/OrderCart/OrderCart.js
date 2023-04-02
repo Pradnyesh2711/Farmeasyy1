@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const products = [
   {
     id: 1,
-    name: 'Vitamin C Medicine',
+    name: 'tomato',
     href: '#',
     color: 'Salmon',
     price: '90.00',

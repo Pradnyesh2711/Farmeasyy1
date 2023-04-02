@@ -39,7 +39,7 @@ const Checkout = () => {
                 <td className="hidden pb-4 md:table-cell">
                   <a href="#0">
                     <img
-                      src="https://wpbingosite.com/wordpress/fuho/wp-content/uploads/2020/12/Image-26-1-480x480.jpg"
+                      src="https://www.jiomart.com/images/product/600x600/590000090/potato-1-kg-product-images-o590000090-p590000090-0-202207291750.jpg"
                       className="w-20 rounded"
                       alt="Thumbnail"
                     />
@@ -47,7 +47,7 @@ const Checkout = () => {
                 </td>
                 <td>
                   <a href="#0">
-                    <p className="mb-2 ">Stomach Medicine</p>
+                    <p className="mb-2 ">Potato</p>
                     <form action="" method="POST">
                       <button type="submit" className="text-gray-700">
                         <small>Structural (Fabrication)</small>
@@ -100,14 +100,14 @@ const Checkout = () => {
                 <td className="hidden pb-4 md:table-cell">
                   <a href="#0">
                     <img
-                      src="https://wpbingosite.com/wordpress/fuho/wp-content/uploads/2021/04/Image-24-480x480.jpg"
+                      src="https://jugais.com/wp-content/uploads/2020/07/tomate-1.jpg"
                       className="w-20 rounded"
                       alt="Thumbnail"
                     />
                   </a>
                 </td>
                 <td>
-                  <p className="mb-2">Birth Control Pills</p>
+                  <p className="mb-2">Tomato</p>
                   <form action="" method="POST">
                     <button type="submit" className="text-gray-700">
                       <small>Overhead Doors</small>
@@ -159,14 +159,14 @@ const Checkout = () => {
                 <td className="hidden pb-4 md:table-cell">
                   <a href="#0">
                     <img
-                      src="https://wpbingosite.com/wordpress/fuho/wp-content/uploads/2020/12/Image-36-1-480x480.jpg"
+                      src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51v2ozMXy8L._SX522_.jpg"
                       className="w-20 rounded"
                       alt="Thumbnail"
                     />
                   </a>
                 </td>
                 <td>
-                  <p className="mb-2">Vitamin C Medicine</p>
+                  <p className="mb-2">Onion</p>
                   <form action="" method="POST">
                     <button type="submit" className="text-gray-700">
                       <small>Framing (Wood)</small>

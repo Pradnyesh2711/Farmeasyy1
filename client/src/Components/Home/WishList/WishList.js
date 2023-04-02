@@ -13,7 +13,7 @@ const products = [
       price: '90.00',
       quantity: 1,
       imageSrc:
-        '',
+        'https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51v2ozMXy8L._SX522_.jpg',
       imageAlt:
         'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
     },
@@ -25,7 +25,7 @@ const products = [
       price: '32.00',
       quantity: 1,
       imageSrc:
-        '',
+        'https://jugais.com/wp-content/uploads/2020/07/tomate-1.jpg',
       imageAlt:
         'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
     },
