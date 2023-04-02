@@ -76,7 +76,7 @@ const LoginForm = () => {
                 className="sm:w-1/2 xl:w-3/5 h-full hidden md:flex flex-auto items-center justify-center p-10 overflow-hidden bg-teal-900 text-white bg-no-repeat bg-cover bg-center relative"
                 style={{
                   backgroundImage:
-                    'url(https://i.ibb.co/9hFrQqt/medicine-home-banner.png)',
+                    'url()',
                 }}
               >
                 <div className="absolute bg-gradient-to-b from-teal-600 to-teal-400 opacity-75 inset-0 z-0"></div>

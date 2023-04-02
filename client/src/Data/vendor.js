@@ -1,7 +1,7 @@
 const vendorData = [
   {
     _id: 'e628d8fc-130e-46da-9d2d-089406837a7c',
-    shopName: 'Huel LLC',
+    shopName: 'Organic T',
     logo: 'https://i.ibb.co/m079wqz/logo-1.jpg',
     banner: 'http://dummyimage.com/100x100.png/dddddd/000000',
     cardBanner: require('../Assets/images/vendorCardBanner/Image-1.jpg')
@@ -21,7 +21,7 @@ const vendorData = [
   },
   {
     _id: '8fb99109-ca7c-4a45-b6b1-5c0ea3279da6',
-    shopName: 'Tremblay and Schiller',
+    shopName: 'Raju Vegetable and Fruits',
     logo: 'https://i.ibb.co/hLx4PDp/logo-2.jpg',
     banner: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     cardBanner: require('../Assets/images/vendorCardBanner/Image-2.jpg')
@@ -41,7 +41,7 @@ const vendorData = [
   },
   {
     _id: '4587978a-1734-4ad9-a2ab-484ea832822e',
-    shopName: 'Fahey-Batz',
+    shopName: 'Sharma Fresh Produce',
     logo: 'https://i.ibb.co/gTyP52V/logo-3.jpg',
     banner: 'http://dummyimage.com/100x100.png/dddddd/000000',
     cardBanner: require('../Assets/images/vendorCardBanner/Image-3.jpg')
@@ -61,7 +61,7 @@ const vendorData = [
   },
   {
     _id: 'f40ef809-55c0-4632-b7ea-abb7e195782b',
-    shopName: 'Baumbach LLC',
+    shopName: 'Farmmy Sandesh',
     logo: 'https://i.ibb.co/7W4Bcpg/logo-4.jpg',
     banner: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     cardBanner: require('../Assets/images/vendorCardBanner/Image-4.jpg')
@@ -81,7 +81,7 @@ const vendorData = [
   },
   {
     _id: '57c7515d-e17d-4f6f-97cf-d1f35a336bed',
-    shopName: 'Howell Group',
+    shopName: 'The Green Grocery',
     logo: 'https://i.ibb.co/xCKt8dq/logo-5.jpg',
     banner: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     cardBanner: require('../Assets/images/vendorCardBanner/Image-5.jpg')
