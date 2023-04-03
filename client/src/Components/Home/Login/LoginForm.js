@@ -4,6 +4,7 @@ import { loginAccount } from '../../../Redux/user/actions';
 import FormValidation from '../../../Validation/FormValidation';
 import Registration from '../Registration/Registration';
 import './Login.css';
+import Data from "./useraccs.json";
 
 const LoginForm = () => {
   const [isAccount, setIsAccount] = useState(false);
@@ -34,7 +35,31 @@ const LoginForm = () => {
     }
     setErrorData(newErrorObj);
   };
+function checkIfvalid(){
+  const em=document.getElementById('email');
+  const pas=document.getElementById('password');
 
+  let Datas='{"email1":"abc@gmail.com","password1":"12345","email2":"xyz@gmail.com","password2":"345"}';
+  
+  let obj=JSON.parse(Datas);
+  let count=0;
+  for (var key in obj) {
+    if(obj[key]==em.value){
+      count++;
+    }
+    if(count==1 && obj[key]==pas.value){
+      count++;
+      alert("Login Successful");
+      break;
+    }
+}
+if(count<2){
+  alert("Invalid credentials");
+}
+else{
+  window.location.replace("./");
+}
+}
   const login = (e) => {
     e.preventDefault();
     // recheckUserInput();
@@ -85,13 +110,13 @@ const LoginForm = () => {
                     Your Goods, delivered <br /> Say goodbye to all your
                     Fresh Products worries with us
                   </div>
-                  <div className="sm:text-sm xl:text-md text-gray-200 font-normal">
+                  {/* <div className="sm:text-sm xl:text-md text-gray-200 font-normal">
                     What is Lorem Ipsum Lorem Ipsum is simply dummy text of the
                     printing and typesetting industry Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s when an
                     unknown printer took a galley of type and scrambled it to
                     make a type specimen book it has?
-                  </div>
+                  </div> */}
                 </div>
 
                 <ul className="circles">
@@ -165,7 +190,7 @@ const LoginForm = () => {
                     </span>
                     <span className="h-px w-16 bg-gray-300"></span>
                   </div>
-                  <form className="mt-8 space-y-6" action="#" method="POST">
+                  {/* <form className="mt-8 space-y-6" action="/api/loginapi" method="POST"> */}
                     <input type="hidden" name="remember" value="true" />
                     <div className="relative">
                       {/* <div className="absolute right-3 mt-4">
@@ -192,6 +217,7 @@ const LoginForm = () => {
                         type="email"
                         placeholder="mail@gmail.com"
                         name="email"
+                        id="email"
                         onBlur={(e)=>handelBlur(e)}
                       />
                     </div>
@@ -204,6 +230,7 @@ const LoginForm = () => {
                         type="password"
                         placeholder="Enter your password"
                         name="password"
+                        id="password"
                         onBlur={(e)=>handelBlur(e)}
                       />
                     </div>
@@ -234,8 +261,9 @@ const LoginForm = () => {
                     </div>
                     <div>
                       <button
-                        onClick={(e)=>login(e)}
-                        type="submit"
+                       // onClick={(e)=>login(e)}
+                       onClick={checkIfvalid}
+                     //   type="submit"
                         className="w-full flex justify-center bg-gradient-to-r from-teal-500 to-teal-600  hover:bg-gradient-to-l hover:from-teal-600 hover:to-teal-500 text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"
                       >
                         Sign in
@@ -252,7 +280,7 @@ const LoginForm = () => {
                         Sign up
                       </a>
                     </p>
-                  </form>
+                  {/* </form> */}
                 </div>
               </div>
             </div>

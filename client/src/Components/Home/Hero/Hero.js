@@ -28,16 +28,16 @@ const Hero = () => {
                 placeholder="Search your Goods from here"
                 className="w-full h-12 px-6 py-2 font-medium text-teal-800 placeholder-gray-500 tracking-wide focus:outline-none"
               /> */}
-              <span className="relative top-0 right-0 block ">
-                <button type="button" className="hero-search-button">
-                 Lets Get Started
-                </button>
-              </span>
+             <h1 className="text-4xl font-semibold font-display leading-10 tracking-tight text-gray-800 sm:text-3xl sm:leading-none">
+              <div className="relative inline-block text-transparent text-gray-800 tracking-normal">
+                           Order Now !!
+            </div>
+            </h1>
             </div>
 
-            <div className="mt-12 text-base tracking-wider text-teal-300">
+            {/* <div className="mt-12 text-base tracking-wider text-teal-300">
               Lesss Go!
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ const Products = () => {
             <input
               type="text"
               className="col-6 border border-1 rounded p-1 sm:p-2 text-teal-800 border-teal-300 placeholder-gray-600 focus:border-teal-500"
-              placeholder="Search medicine..."
+              placeholder="Search Products..."
               id="search-filter"
             />
           </div>

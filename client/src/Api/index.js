@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:4000' })
+const API = axios.create({ baseURL: 'http://localhost:3000' })
 
 API.interceptors.request.use(req => {
   const token = JSON.parse(localStorage.getItem('profile'))?.token;
@@ -12,5 +12,5 @@ API.interceptors.request.use(req => {
 
 //auth
 export const createUserApi = formData => API.post(`/auth/sineUp`, formData)
-export const loginUserApi = formData => API.post(`/auth/login`, formData)
+export const loginUserApi = formData => API.post(`/api/loginapi`, formData)
 

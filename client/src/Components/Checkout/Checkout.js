@@ -50,7 +50,7 @@ const Checkout = () => {
                     <p className="mb-2 ">Potato</p>
                     <form action="" method="POST">
                       <button type="submit" className="text-gray-700">
-                        <small>Structural (Fabrication)</small>
+                        {/* <small>Structural (Fabrication)</small> */}
                       </button>
                     </form>
                   </a>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import shopCard from '../../../Data/vendor';
+//import {MongoClient} from 'react-router-dom';
 
 const ShopCard = () => {
   const first6 = shopCard.slice(0, 6);
@@ -17,6 +18,8 @@ const ShopCard = () => {
           Search for Fresh Products, Filter by your location
         </p>
       </div>
+
+      {/* Shop cards */}
       <div className="cards flex flex-wrap justify-center">
         {shopCards.map((shopCard) => (
           <div className="pb-4 m-6 rounded-lg shadow-3xl w-96 md:w-2/5 lg:w-1/4 bg-white">
@@ -129,3 +132,26 @@ const ShopCard = () => {
 };
 
 export default ShopCard;
+
+// export async function getServerSideProps(router){
+//   const client=await MongoClient.connect(process.env.MONGO_URI, {
+//     useNewUrlParser:true,
+//     useUnifiedTopology:true,
+//   });
+
+//   const db=client.db(process.env.DB_NAME);
+//   var collection=db.collection('selleraccs');
+//   var posts=await collection.find().toArray();
+
+//   client.close();
+
+//   return{
+//     props:{
+//       posts:posts.map((post)=>({
+//         ...post,
+//         _id:post._id.toString(),
+//       })),
+//       revalidate:1,
+//       },
+//     };
+//   }
