@@ -1,178 +1,64 @@
-const vendorData = [
-  {
-    _id: 'e628d8fc-130e-46da-9d2d-089406837a7c',
-    shopName: 'Organic T',
-    logo: 'https://i.ibb.co/m079wqz/logo-1.jpg',
-    banner: 'http://dummyimage.com/100x100.png/dddddd/000000',
-    cardBanner: require('../Assets/images/vendorCardBanner/download (3).jpeg')
-      .default,
-    rating: 2,
-    totalReview: 22,
-    city: 'Mumbai',
-    location: 'Andheri',
-    longitude: 126.9779692,
-    'postal code': 'G83',
-    name: 'Datha Harmon',
-    phone: '717-24-2429',
-    email: 'dharmon0@latimes.com',
-    hasOwnDelivery: true,
-    isDeliveryFree: true,
-    status: 'Open',
-  },
-  {
-    _id: '8fb99109-ca7c-4a45-b6b1-5c0ea3279da6',
-    shopName: 'Raju Vegetable and Fruits',
-    logo: 'https://i.ibb.co/hLx4PDp/logo-2.jpg',
-    banner: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
-    cardBanner: require('../Assets/images/vendorCardBanner/download.jpg')
-      .default,
-    rating: 3,
-    totalReview: 22,
-    city: 'Mumbai',
-    location: 'Andheri',
-    longitude: -8.6346959,
-    'postal code': 'F45',
-    name: 'Hope Battisson',
-    phone: '595-08-2102',
-    email: 'hbattisson1@mac.com',
-    hasOwnDelivery: false,
-    isDeliveryFree: true,
-    status: 'Open',
-  },
-  {
-    _id: '4587978a-1734-4ad9-a2ab-484ea832822e',
-    shopName: 'Sharma Fresh Produce',
-    logo: 'https://i.ibb.co/gTyP52V/logo-3.jpg',
-    banner: 'http://dummyimage.com/100x100.png/dddddd/000000',
-    cardBanner: require('../Assets/images/vendorCardBanner/download (4).jpeg')
-      .default,
-    rating: 1,
-    totalReview: 22,
-    city: 'Mumbai',
-    location: 'Andheri',
-    longitude: -91.912218,
-    'postal code': '11007',
-    name: 'Brandais Faull',
-    phone: '506-84-9725',
-    email: 'bfaull2@multiply.com',
-    hasOwnDelivery: true,
-    isDeliveryFree: true,
-    status: 'Closed',
-  },
-  {
-    _id: 'f40ef809-55c0-4632-b7ea-abb7e195782b',
-    shopName: 'Farmmy Sandesh',
-    logo: 'https://i.ibb.co/7W4Bcpg/logo-4.jpg',
-    banner: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
-    cardBanner: require('../Assets/images/vendorCardBanner/download (3).jpeg')
-      .default,
-    rating: 3,
-    totalReview: 22,
-    city: 'Mumbai',
-    location: 'Andheri',
-    longitude: 112.662673,
-    'postal code': 'F11',
-    name: 'Nataniel Durtnal',
-    phone: '132-90-3868',
-    email: 'ndurtnal3@tripod.com',
-    hasOwnDelivery: true,
-    isDeliveryFree: true,
-    status: 'Open',
-  },
-  {
-    _id: '57c7515d-e17d-4f6f-97cf-d1f35a336bed',
-    shopName: 'The Green Grocerry',
-    logo: 'https://i.ibb.co/xCKt8dq/logo-5.jpg',
-    banner: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
-    cardBanner: require('../Assets/images/vendorCardBanner/download (2).jpeg')
-      .default,
-    rating: 5,
-    totalReview: 22,
-    city: 'Mumbai',
-    location: 'Andheri',
-    longitude: -8.5340895,
-    'postal code': '4785-103',
-    name: 'Archy Brew',
-    phone: '279-16-6959',
-    email: 'abrew4@nsw.gov.au',
-    hasOwnDelivery: true,
-    isDeliveryFree: false,
-    status: 'Closed',
-  },
-  {
-    _id: '5299f915-d6df-4970-a7b7-6b743f68cdf7',
-    shopName: 'Hello Farmy',
-    logo: 'https://i.ibb.co/bmfZp95/logo-6.jpg',
-    banner: 'http://dummyimage.com/100x100.png/dddddd/000000',
-    cardBanner: require('../Assets/images/vendorCardBanner/download.jpg')
-      .default,
-    rating: 4,
-    totalReview: 22,
-    city: 'Mumbai',
-    location: 'Andheri',
-    longitude: -61.7285757,
-    'postal code': '6233',
-    name: 'Dorisa McCulley',
-    phone: '792-44-1782',
-    email: 'dmcculley5@privacy.gov.au',
-    hasOwnDelivery: false,
-    isDeliveryFree: false,
-    status: 'Open',
-  },
-  // {
-  //   _id: "e628d8fc-130e-46da-9d2d-086543837a7c",
-  //   shopName: "Maul LLC",
-  //   logo: "https://i.ibb.co/m079wqz/logo-1.jpg",
-  //   banner: "http://dummyimage.com/100x100.png/dddddd/000000",
-  //   cardBanner: require("../Assets/images/vendorCardBanner/Image-1.jpg").default,
-  //   rating: 2,
-  //   city: 'Mumbai',
-  //   location: 'Andheri',
-  //   longitude: 126.9779692,
-  //   "postal code": "G83",
-  //   name: "Datha Harmon",
-  //   phone: "717-24-2429",
-  //   email: "dharmon0@latimes.com",
-  //   hasOwnDelivery: true,
-  //   isDeliveryFree: true,
-  //   status: "Open"
-  // },
-  // {
-  //   _id: "8fb99109-ca7c-4a45-b6b1-5c0ea8765da6",
-  //   shopName: "Tremblay ",
-  //   logo: "https://i.ibb.co/hLx4PDp/logo-2.jpg",
-  //   banner: "http://dummyimage.com/100x100.png/ff4444/ffffff",
-  //   cardBanner: require("../Assets/images/vendorCardBanner/Image-2.jpg").default,
-  //   rating: 3,
-  //   city: 'Mumbai',
-  //   location: 'Andheri',
-  //   longitude: -8.6346959,
-  //   "postal code": "F45",
-  //   name: "Hope Battisson",
-  //   phone: "595-08-2102",
-  //   email: "hbattisson1@mac.com",
-  //   hasOwnDelivery: false,
-  //   isDeliveryFree: true,
-  //   status: "Open"
-  // },
-  // {
-  //   _id: "4587978a-1734-4ad9-a2ab-484ea833254e",
-  //   shopName: "Lahey Yatz",
-  //   logo: "https://i.ibb.co/gTyP52V/logo-3.jpg",
-  //   banner: "http://dummyimage.com/100x100.png/dddddd/000000",
-  //   cardBanner: require("../Assets/images/vendorCardBanner/Image-3.jpg").default,
-  //   rating: 1,
-  //   city: "Champerico",
-  //   location: "Kretoria",
-  //   longitude: -91.912218,
-  //   "postal code": "11007",
-  //   name: "Brandais Faull",
-  //   phone: "506-84-9725",
-  //   email: "bfaull2@multiply.com",
-  //   hasOwnDelivery: true,
-  //   isDeliveryFree: true,
-  //   status: "Closed"
-  // },
-];
+import { useEffect } from "react";
+import {useState} from "react";
+import React from "react";
 
-export default vendorData;
+function Vendor() {
+     const[records,setRecords]=useState([]);
+
+    useEffect(()=>{
+   fetch('http://localhost:4000/api/shops')
+     .then(response => response.json())
+     .then(data =>setRecords({records:data}))
+          .catch(err => console.log(err))
+           },[])
+return (
+<div>
+
+<ul>
+  {records.map((list,index)=>(
+       <li key={index}>{list._id} |{list.shopName}</li>
+  ))}
+</ul>
+
+
+</div>
+
+)
+
+ }
+
+
+
+
+
+
+// fetch('http://localhost:4000/api/shops', {
+//     method: 'GET',
+// })
+//    .then(response => response.json())
+//    .then(response => console.log(JSON.stringify(response)))
+
+
+
+//    const vendor=[
+//   {
+//     _id: "4587978a-1734-4ad9-a2ab-484ea833254e",
+//     shopName: "Lahey Yatz",
+//     logo: "https://i.ibb.co/gTyP52V/logo-3.jpg",
+//     banner: "http://dummyimage.com/100x100.png/dddddd/000000",
+//     cardBanner: require("../Assets/images/vendorCardBanner/Image-3.jpg").default,
+//     rating: 1,
+//     city: "Champerico",
+//     location: "Kretoria",
+//     longitude: -91.912218,
+//     "postal code": "11007",
+//     name: "Brandais Faull",
+//     phone: "506-84-9725",
+//     email: "bfaull2@multiply.com",
+//     hasOwnDelivery: true,
+//     isDeliveryFree: true,
+//     status: "Closed"
+//   },
+// ];
+
+export default Vendor;

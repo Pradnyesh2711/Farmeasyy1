@@ -7,14 +7,21 @@ import './index.css';
 import { store } from './Redux/store';
 import reportWebVitals from './reportWebVitals';
 
+
 ReactDOM.render(
+
   <Provider store={store}>
   <React.StrictMode>
+ 
     <App />
+   
   </React.StrictMode>
   </Provider>,
   document.getElementById('root')
+
 );
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
