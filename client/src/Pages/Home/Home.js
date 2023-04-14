@@ -39,7 +39,7 @@ useEffect(()=>{home()});
  <OfferCard />
 
     <ShopCard /> 
- <VendorCTA />nn
+ <VendorCTA />
  <Footer /> 
 
 {/* 

@@ -5,8 +5,8 @@ import shopCard from '../../../Data/vendor';
 
 
 const ShopCard = () => {
-  const first6 = shopCard.slice(0, 6);
-  const [shopCards, setShopCards] = useState(first6);
+  // const first6 = shopCard.slice(0, 6);
+  // const [shopCards, setShopCards] = useState(first6);
   function home(){
     fetch('http://localhost:4000/api/shops')
      .then(response => response.json())
@@ -40,9 +40,9 @@ const ShopCard = () => {
 
       {/* Shop cards */}
       <div className="cards flex flex-wrap justify-center">
-        {shopCards.map((shopCard) => (
+        {records.map((record) => (
           <div className="pb-4 m-6 rounded-lg shadow-3xl w-96 md:w-2/5 lg:w-1/4 bg-white">
-            <img src={shopCard.cardBanner} className="rounded-t-lg" alt="" />
+            <img src="" className="rounded-t-lg" alt="" />
 
             <div className="relative pt-2">
               <div className="absolute -mt-12 w-full flex justify-center items-center">
@@ -67,15 +67,15 @@ const ShopCard = () => {
                 </div>
 
                 <h1 className="font-medium text-xl py-1.5 text-teal-800 font-sans tracking-wide">
-                  {shopCard.shopName}
+                  {record.shopName}
                 </h1>
                 <div className="text-sm font-sans text-gray-800">
                   <p className="pb-1 text-yellow-800">⭐ {shopCard.rating}</p>
                   <p className="pb-1">
-                    {shopCard.location} {shopCard['postal code']}
+                    {shopCard.location} 
                   </p>
                   <p className="pb-1">{shopCard.city}</p>
-                  <p className="pb-1">{shopCard.address3}</p>
+                 
                   <div className="flex">
                     <svg
                       className="w-4 h-4 mt-0.5 mr-1"
