@@ -45,3 +45,10 @@ app.get('/api/shops',(req,resp)=>{
      resp.send(result);
   })
 })
+
+app.get('/api/products',(req,resp)=>{
+  database.collection('products').find({}).toArray((err,result)=>{
+    if(err) throw err
+     resp.send(result);
+  })
+})
