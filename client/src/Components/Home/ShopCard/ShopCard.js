@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import shopCard from '../../../Data/vendor';
 
@@ -6,8 +7,26 @@ import shopCard from '../../../Data/vendor';
 const ShopCard = () => {
   const first6 = shopCard.slice(0, 6);
   const [shopCards, setShopCards] = useState(first6);
-
-  return (
+  function home(){
+    fetch('http://localhost:4000/api/shops')
+     .then(response => response.json())
+          .then(data => setActivity(data))
+    
+    }      
+    const[records,setActivity]=useState([]);
+    
+    useEffect(()=>{home()});
+      return (
+        <>
+      { <div>
+      <ul>
+      {records.map((record)=>(
+     <li>{record.shopName}</li>
+     
+     
+     ))}
+     </ul>
+     </div> }
     <div className="pb-10 pt-8 bg-teal-50">
       {/* Shop Card */}
       <div className="w-full text-center py-8">
@@ -128,12 +147,13 @@ const ShopCard = () => {
         </Link>
       </div>
     </div>
+    </>
   );
 };
 
 export default ShopCard;
 
-// export async function getServerSideProps(router){
+{/* // export async function getServerSideProps(router){
 //   const client=await MongoClient.connect(process.env.MONGO_URI, {
 //     useNewUrlParser:true,
 //     useUnifiedTopology:true,
@@ -154,4 +174,4 @@ export default ShopCard;
 //       revalidate:1,
 //       },
 //     };
-//   }
+// } */}
