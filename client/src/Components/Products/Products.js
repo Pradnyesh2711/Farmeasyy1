@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import products from '../../Data/products';
 
 const Products = () => {
-  return (
+
+
+  function home(){
+    fetch('http://localhost:4000/api/products')
+     .then(response => response.json())
+          .then(data => setActivity(data))
+    
+    }      
+    const[records,setActivity]=useState([]);
+    
+    useEffect(()=>{home()});
+      return (   
+    
+ 
     <div className="bg-white">
       <div className="max-w-2xl mx-auto pb-10 px-4 sm:px-6 lg:max-w-7xl lg:px-8 pt-10 sm:pt-10">
         <div className="flex justify-between align-center">
@@ -30,13 +43,14 @@ const Products = () => {
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => (
-            <div key={product.id} className="group shadow-4xl">
+
+          {records.map((record) => (
+            <div key={record.id} className="group shadow-4xl">
               <Link to="/productDetails">
                 <div className="w-full min-h-80 bg-blue-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                   <img
-                    src={product.image}
-                    alt={product.imageAlt}
+                    src={record.image}
+                    alt={record.imageAlt}
                     className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                   />
                 </div>
@@ -45,20 +59,20 @@ const Products = () => {
                 <div className="mt-4 flex justify-between px-2">
                   <div>
                     <h3 className="text-md text-gray-900 font-display tracking-wide">
-                      <a href={product.href}>
+                      <a href={record.href}>
                         <span aria-hidden="true" className="inset-0" />
-                        {product.name}
+                        {record.name}
                       </a>
                     </h3>
                   </div>
                   <p className="text-md font-medium text-teal-600 flex">
-                    ৳{product.price}
+                    ৳{record.price}
                   </p>
                 </div>
 
                 <div>
                   <p className="text-sm mt-1 px-2 text-gray-900 font-sans tracking-wide">
-                    {product.brand}
+                    {record.brand}
                   </p>
                 </div>
 
