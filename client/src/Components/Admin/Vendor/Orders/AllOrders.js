@@ -1,57 +1,65 @@
 import React, { useState } from 'react';
 import EditOrders from './EditOrders';
-
+import {useEffect} from 'react'
 const AllOrders = () => {
   const [editModal, setEditModal] = useState(false);
   
-  const orders = [
-    {
-      id: '0',
-      photo: 'https://i.imgur.com/1As0akH.png1',
-      name: 'Alex Shatov',
-      address: 'Mripur-1',
-      products: '12',
-      price: '890.66',
-      status: 'Completed',
-    },
-    {
-      id: '1',
-      photo: 'https://i.imgur.com/UYCE7Rr.png',
-      name: 'Philip Harbach',
-      address: 'Dhonmondi',
-      products: '19',
-      price: '340.16',
-      status: 'Confirmed',
-    },
-    {
-      id: '2',
-      photo: 'https://i.imgur.com/FHMKqK5.png',
-      name: 'Mirko Fisuk',
-      address: 'Uttara-6',
-      products: '09',
-      price: '530.76',
-      status: 'Pending',
-    },
-    {
-      id: '3',
-      photo: 'https://i.imgur.com/hz6bZkb.png',
-      name: 'Olga Semklo',
-      address: 'Gulshan-1',
-      products: '14',
-      price: '280.57',
-      status: 'Cancelled',
-    },
-    {
-      id: '4',
-      photo: 'https://i.imgur.com/udG6SOt.png',
-      name: 'Burak Long',
-      address: 'Mirpur-12',
-      products: '10',
-      price: '567.34',
-      status: 'Processing',
-    },
-  ];
-
+  // const orders = [
+  //   {
+  //     id: '0',
+  //     photo: 'https://i.imgur.com/1As0akH.png1',
+  //     name: 'Alex Shatov',
+  //     address: 'Mripur-1',
+  //     products: '12',
+  //     price: '890.66',
+  //     order_status: 'Completed',
+  //   },
+  //   {
+  //     id: '1',
+  //     photo: 'https://i.imgur.com/UYCE7Rr.png',
+  //     name: 'Philip Harbach',
+  //     address: 'Dhonmondi',
+  //     products: '19',
+  //     price: '340.16',
+  //     order_status: 'Confirmed',
+  //   },
+  //   {
+  //     id: '2',
+  //     photo: 'https://i.imgur.com/FHMKqK5.png',
+  //     name: 'Mirko Fisuk',
+  //     address: 'Uttara-6',
+  //     products: '09',
+  //     price: '530.76',
+  //     order_status: 'Pending',
+  //   },
+  //   {
+  //     id: '3',
+  //     photo: 'https://i.imgur.com/hz6bZkb.png',
+  //     name: 'Olga Semklo',
+  //     address: 'Gulshan-1',
+  //     products: '14',
+  //     price: '280.57',
+  //     order_status: 'Cancelled',
+  //   },
+  //   {
+  //     id: '4',
+  //     photo: 'https://i.imgur.com/udG6SOt.png',
+  //     name: 'Burak Long',
+  //     address: 'Mirpur-12',
+  //     products: '10',
+  //     price: '567.34',
+  //     order_status: 'Processing',
+  //   },
+  // ];
+  function home(){
+    fetch('http://localhost:4000/api/allorders')
+     .then(response => response.json())
+          .then(data => setActivity(data))
+    
+    }      
+    const[records,setActivity]=useState([]);
+    
+    useEffect(()=>{home()});
   const options = {
     year: 'numeric',
     month: 'long',
@@ -125,7 +133,7 @@ const AllOrders = () => {
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left pl-12 text-sm uppercase font-semibold"
                   >
-                    Status
+                    order_status
                   </th>
                   <th
                     scope="col"
@@ -137,9 +145,9 @@ const AllOrders = () => {
               </thead>
 
               {/* all Orders data row */}
-              {orders.map((order) => {
+              {records.map((record) => {
                 return (
-                  <tbody key={order._id}>
+                  <tbody key={record._id}>
                     <tr>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white font-body font-medium text-sm">
                         <div className="flex items-center w-24 sm:w-full">
@@ -147,26 +155,26 @@ const AllOrders = () => {
                             <a href="/" className="block relative">
                               <img
                                 alt="User Avatar"
-                                src={order.photo}
+                                src={record.photo}
                                 className="mx-auto object-cover rounded-full h-10 w-10"
                               />
                             </a>
                           </div>
                           <div className="ml-3">
                             <p className="text-gray-900 whitespace-no-wrap">
-                              {order.name.substr(0, 19)}
+                              {record.customer_name.substr(0, 19)}
                             </p>
                           </div>
                         </div>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.address}
+                          {record.address}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-center text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.products}
+                          {record.product}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -176,19 +184,19 @@ const AllOrders = () => {
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          ৳ {order.price}
+                          ৳ {record.price}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
                         <span
                           className={`relative inline-block px-3 py-1 w-28 text-center font-semibold leading-tight ${
-                            order.status === 'Pending'
+                            record.order_status === 'Pending'
                               ? 'text-yellow-900'
-                              : order.status === 'Confirmed'
+                              : record.order_status === 'Confirmed'
                               ? 'text-indigo-600'
-                              : order.status === 'Completed'
+                              : record.order_status === 'Completed'
                               ? 'text-green-800'
-                              : order.status === 'Cancelled'
+                              : record.order_status === 'Cancelled'
                               ? 'text-red-500'
                               : 'text-blue-800'
                           }`}
@@ -196,18 +204,18 @@ const AllOrders = () => {
                           <span
                             aria-hidden="true"
                             className={`absolute inset-0 opacity-50 rounded-full ${
-                              order.status === 'Pending'
+                              record.order_status === 'Pending'
                                 ? 'bg-yellow-600'
-                                : order.status === 'Confirmed'
+                                : record.order_status === 'Confirmed'
                                 ? 'bg-indigo-200'
-                                : order.status === 'Completed'
+                                : record.order_status === 'Completed'
                                 ? 'bg-green-200'
-                                : order.status === 'Cancelled'
+                                : record.order_status === 'Cancelled'
                                 ? 'bg-red-200'
                                 : 'bg-blue-300'
                             }`}
                           ></span>
-                          <span className="relative">{order.status}</span>
+                          <span className="relative">{record.order_status}</span>
                         </span>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -295,14 +303,14 @@ const AllOrders = () => {
         </div>
       </div>
 
-      {/* Edit Modal Component */}
-      {editModal ? (
+      Edit Modal Component
+      {/* {editModal ? (
         <EditOrders
           setEditModal={setEditModal}
           //viewOrder={viewOrder}
-          orders={orders}
+          records={record}
         />
-      ) : null}
+      ) : null} */}
     </section>
   );
 };
