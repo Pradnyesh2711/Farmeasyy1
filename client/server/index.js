@@ -35,20 +35,27 @@ app.listen(4000,()=>{
   MongoClient.connect('mongodb+srv://root:mongodb%23123@cluster0.bkzkjc6.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser:true},(error,result)=>{
     if(error) throw error
     database=result.db('test');
-  console.log("database connection successful");
-  })
-})
+  console.log("database has connected successfully");
+  });
+});
 
 app.get('/api/shops',(req,resp)=>{
   database.collection('shops').find({}).toArray((err,result)=>{
     if(err) throw err
      resp.send(result);
-  })
-})
+  });
+});
 
-app.get('/api/products',(req,resp)=>{
+app.get('/api/products',(req,resp2)=>{
   database.collection('products').find({}).toArray((err,result)=>{
     if(err) throw err
-     resp.send(result);
-  })
-})
+     resp2.send(result);
+  });
+});
+
+app.get('/api/customers',(req,resp3)=>{
+  database.collection('customers').find({}).toArray((err,result)=>{
+    if(err) throw err
+     resp3.send(result);
+  });
+});
