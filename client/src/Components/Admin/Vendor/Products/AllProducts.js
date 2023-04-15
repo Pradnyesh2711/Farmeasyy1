@@ -24,33 +24,7 @@ const AllProducts = () => {
       price: '34.16',
       category: 'Vegetables',
     },
-    // {
-    //   id: '2',
-    //   photo: 'https://i.ibb.co/02WmJdc/5-19-1000x1000-min.jpg',
-    //   name: 'Mirko Fisuk',
-    //   suppliers: 'Beximco',
-    //   stock: '09',
-    //   price: '53.76',
-    //   category: 'Head',
-    // },
-    // {
-    //   id: '3',
-    //   photo: 'https://i.ibb.co/GxTVSVk/shop-4-9-1000x1000-min.jpg',
-    //   name: 'Olga Semklo',
-    //   suppliers: 'ACI',
-    //   stock: '14',
-    //   price: '28.57',
-    //   category: 'Hand',
-    // },
-    // {
-    //   id: '4',
-    //   photo: 'https://i.ibb.co/X330FTj/shop-4-10-1000x1000-min.jpg',
-    //   name: 'Burak Long',
-    //   suppliers: 'Uniliver',
-    //   stock: '10',
-    //   price: '56.34',
-    //   category: 'Leg',
-    // },
+    
   ];
 
   return (

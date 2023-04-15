@@ -59,3 +59,11 @@ app.get('/api/customers',(req,resp3)=>{
      resp3.send(result);
   });
 });
+
+
+app.get('/api/allorders',(req,resp3)=>{
+  database.collection('allorders').find({}).toArray((err,result)=>{
+    if(err) throw err
+     resp3.send(result);
+  });
+});

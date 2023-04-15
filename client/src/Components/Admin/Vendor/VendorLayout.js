@@ -6,7 +6,7 @@ import AllOrders from './Orders/AllOrders';
 import VendorNavbar from './Partials/VendorNavbar';
 import VendorSidebar from './Partials/VendorSidebar';
 import AllProducts from './Products/AllProducts';
-import AllSuppliers from './Suppliers/AllSuppliers';
+
 import VendorDashboard from './VendorDashboard';
 
 const VendorLayout = () => {
@@ -42,8 +42,6 @@ const VendorLayout = () => {
               <AllOrders />
             ) : panel === 'allProducts' ? (
               <AllProducts />
-            ) : panel === 'suppliers' ? (
-              <AllSuppliers />
             ) : panel === 'customers' ? (
               <AllCustomers />
             ) : panel === 'messages' ? (
