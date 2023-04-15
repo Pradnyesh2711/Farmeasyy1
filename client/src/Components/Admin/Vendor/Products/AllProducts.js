@@ -1,32 +1,40 @@
 import React, { useState } from 'react';
 import AddNewProducts from './AddNewProducts';
-
+import { useEffect } from 'react';
 const AllProducts = () => {
   const [editModal, setEditModal] = useState(false);
   const [viewProduct, setViewProduct] = useState();
 
-  const orders = [
-    {
-      id: '0',
-      photo: 'https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61OX7dhIPVL._SL1500_.jpg',
-      name: 'Apple',
-      suppliers:'Raju vegetables',
-      stock: '19',
-      price: '34.16',
-     category: 'Vegetables',
-    },
-    {
-      id: '1',
-      photo: 'https://post.healthline.com/wp-content/uploads/2020/09/AN313-Tomatoes-732x549-Thumb-732x549.jpg',
-      name: 'Tomato',
-      suppliers: 'The Green Grocery',
-      stock: '19',
-      price: '34.16',
-      category: 'Vegetables',
-    },
+  // const orders = [
+  //   {
+  //     id: '0',
+  //     photo: 'https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61OX7dhIPVL._SL1500_.jpg',
+  //     name: 'Apple',
+  //     suppliers:'Raju vegetables',
+  //     stock: '19',
+  //     price: '34.16',
+  //    category: 'Vegetables',
+  //   },
+  //   {
+  //     id: '1',
+  //     photo: 'https://post.healthline.com/wp-content/uploads/2020/09/AN313-Tomatoes-732x549-Thumb-732x549.jpg',
+  //     name: 'Tomato',
+  //     suppliers: 'The Green Grocery',
+  //     stock: '19',
+  //     price: '34.16',
+  //     category: 'Vegetables',
+  //   },
     
-  ];
-
+  // ];
+  function home(){
+    fetch('http://localhost:4000/api/products')
+     .then(response => response.json())
+          .then(data => setActivity(data))
+    
+    }      
+    const[records,setActivity]=useState([]);
+    
+    useEffect(()=>{home()});
   return (
     <section>
       <div className="container mx-auto px-4 sm:px-8 max-w-full sm:max-w-5xl">
@@ -89,12 +97,7 @@ const AllProducts = () => {
                   >
                     Stock
                   </th>
-                  <th
-                    scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
-                  >
-                    Suppliers
-                  </th>
+                  
                   <th
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
@@ -111,9 +114,9 @@ const AllProducts = () => {
               </thead>
 
               {/* all Orders data row */}
-              {orders.map((order) => {
+              {records.map((record) => {
                 return (
-                  <tbody key={order._id}>
+                  <tbody key={record._id}>
                     <tr>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white font-body font-medium text-sm">
                         <div className="flex items-center w-24 sm:w-full">
@@ -121,36 +124,32 @@ const AllProducts = () => {
                             <a href="/" className="block relative">
                               <img
                                 alt="User Avatar"
-                                src={order.photo}
+                                src={record.image}
                                 className="mx-auto object-cover rounded-full h-10 w-10"
                               />
                             </a>
                           </div>
                           <div className="ml-3">
                             <p className="text-gray-900 whitespace-no-wrap">
-                              {order.name.substr(0, 12)}
+                              {record.name.substr(0, 12)}
                             </p>
                           </div>
                         </div>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.category}
+                          {record.category}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-left text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.stock}
+                          {record.stock}
                         </p>
                       </td>
+                     
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.suppliers}
-                        </p>
-                      </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          ৳ {order.price}
+                          Rs {record.price}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
