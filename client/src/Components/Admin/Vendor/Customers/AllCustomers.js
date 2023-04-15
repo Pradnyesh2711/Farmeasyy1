@@ -1,59 +1,71 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const AllCustomers = () => {
-  const orders = [
-    {
-      id: '0',
-      photo: 'https://i.imgur.com/1As0akH.png1',
-      name: 'Alex Shatov',
-      email: 'alexshatov@gmail.com',
-      address: 'Mripur-1',
-      phone: '+8801736985253',
-      status: 'Active',
-    },
-    {
-      id: '1',
-      photo: 'https://i.imgur.com/UYCE7Rr.png',
-      name: 'Philip Harbach',
-      address: 'Dhonmondi',
-      email: 'philip.h@gmail.com',
-      phone: '+8801636985275',
-      status: 'Active',
-    },
-    {
-      id: '2',
-      photo: 'https://i.imgur.com/FHMKqK5.png',
-      name: 'Mirko Fisuk',
-      address: 'Uttara-6',
-      email: 'mirkofisuk@gmail.com',
-      phone: '+8801336985214',
-      status: 'Active',
-    },
-    {
-      id: '3',
-      photo: 'https://i.imgur.com/hz6bZkb.png',
-      name: 'Olga Semklo',
-      email: 'olga.s@cool.design',
-      address: 'Gulshan-1',
-      phone: '+8801736985264',
-      status: 'Active',
-    },
-    {
-      id: '4',
-      photo: 'https://i.imgur.com/udG6SOt.png',
-      name: 'Burak Long',
-      address: 'Mirpur-12',
-      email: 'longburak@gmail.com',
-      phone: '+8801736984514',
-      status: 'Deactive',
-    },
-  ];
+  // const orders = [
+  //   {
+  //     id: '0',
+  //     photo: 'https://i.imgur.com/1As0akH.png1',
+  //     name: 'Alex Shatov',
+  //     email: 'alexshatov@gmail.com',
+  //     address: 'Mripur-1',
+  //     phone: '+8801736985253',
+  //     status: 'Active',
+  //   },
+  //   {
+  //     id: '1',
+  //     photo: 'https://i.imgur.com/UYCE7Rr.png',
+  //     name: 'Philip Harbach',
+  //     address: 'Dhonmondi',
+  //     email: 'philip.h@gmail.com',
+  //     phone: '+8801636985275',
+  //     status: 'Active',
+  //   },
+  //   {
+  //     id: '2',
+  //     photo: 'https://i.imgur.com/FHMKqK5.png',
+  //     name: 'Mirko Fisuk',
+  //     address: 'Uttara-6',
+  //     email: 'mirkofisuk@gmail.com',
+  //     phone: '+8801336985214',
+  //     status: 'Active',
+  //   },
+  //   {
+  //     id: '3',
+  //     photo: 'https://i.imgur.com/hz6bZkb.png',
+  //     name: 'Olga Semklo',
+  //     email: 'olga.s@cool.design',
+  //     address: 'Gulshan-1',
+  //     phone: '+8801736985264',
+  //     status: 'Active',
+  //   },
+  //   {
+  //     id: '4',
+  //     photo: 'https://i.imgur.com/udG6SOt.png',
+  //     name: 'Burak Long',
+  //     address: 'Mirpur-12',
+  //     email: 'longburak@gmail.com',
+  //     phone: '+8801736984514',
+  //     status: 'Deactive',
+  //   },
+  // ];
 
-  const options = {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  };
+   const options = {
+     year: 'numeric',
+     month: 'short',
+     day: 'numeric',
+   };
+
+  function home(){
+    fetch('http://localhost:4000/api/customers')
+     .then(response => response.json())
+          .then(data => setActivity(data))
+    
+    }      
+    const[records,setActivity]=useState([]);
+    
+    useEffect(()=>{home()});
 
   return (
     <section>
@@ -128,9 +140,9 @@ const AllCustomers = () => {
               </thead>
 
               {/* all Orders data row */}
-              {orders.map((order) => {
+              {records.map((record) => {
                 return (
-                  <tbody key={order._id}>
+                  <tbody key={record._id}>
                     <tr>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white font-body font-medium text-sm">
                         <div className="flex items-center w-24 sm:w-full">
@@ -138,36 +150,36 @@ const AllCustomers = () => {
                             <a href="/" className="block relative">
                               <img
                                 alt="User Avatar"
-                                src={order.photo}
+                                src={record.photo}
                                 className="mx-auto object-cover rounded-full h-10 w-10"
                               />
                             </a>
                           </div>
                           <div className="ml-3">
                             <p className="text-gray-900 whitespace-no-wrap">
-                              {order.name.substr(0, 19)}
+                              {record.name.substr(0, 19)}
                             </p>
                           </div>
                         </div>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.email}
+                          {record.email}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-center text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.address}
+                          {record.address}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.phone}
+                          {record.phone}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {new Date().toLocaleDateString('en-US', options)}
+                          {new Date().toLocaleDateString('en-US', options)} 
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
