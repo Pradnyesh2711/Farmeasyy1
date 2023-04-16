@@ -155,7 +155,7 @@ const AllOrders = () => {
                             <a href="/" className="block relative">
                               <img
                                 alt="User Avatar"
-                                src={record.photo}
+                                src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg"
                                 className="mx-auto object-cover rounded-full h-10 w-10"
                               />
                             </a>
