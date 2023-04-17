@@ -12,27 +12,9 @@ import VendorCTA from '../../Components/Home/VendorCTA/VendorCTA';
 const Home = () => {
 
 
-       
-function home(){
-fetch('http://localhost:4000/api/shops')
- .then(response => response.json())
-      .then(data => setActivity(data))
+  return(   
 
-}      
-const[records,setActivity]=useState([]);
-
-useEffect(()=>{home()});
-  return (
-    <>
-  { <div>
-  <ul>
-  {records.map((record)=>(
- <li>{record.shopName}</li>
- 
- 
- ))}
- </ul>
- </div> }
+<>
  <Header />
  <NavBar />
  <Hero />
