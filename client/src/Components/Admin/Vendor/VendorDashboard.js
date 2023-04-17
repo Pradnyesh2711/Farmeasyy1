@@ -6,11 +6,11 @@ import RecentCustomers from './Dashboard/RecentCustomers';
 const VendorDashboard = () => {
   return (
     <>
-      <DashboardCard />
+  
 
       <div className="grid grid-cols-12 gap-6 mt-6">
         <RecentCustomers />
-        <IncomeExpenses />
+        
       </div>
     </>
   );
