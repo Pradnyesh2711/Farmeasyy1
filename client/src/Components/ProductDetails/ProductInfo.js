@@ -3,9 +3,23 @@ import { Link } from 'react-router-dom';
 import QuantityButton from '../Common/QuantityButton';
 import ShowRating from '../Common/ShowRating';
 
-const ProductInfo = ({
-  product: { image, brand, description, totalReview },
-}) => {
+const ProductInfo =()=> {{
+  product: { image, brand, description, totalReview }
+}
+const [amount,setAmount]=useState(3);
+
+  const setDecrease=()=>{
+    amount>1 ?setAmount(amount -1):setAmount(1);
+
+
+  }
+const setIncrease=()=>{
+  setAmount(amount + 1);
+
+}
+
+
+ 
   return (
     <div className="mx-auto flex flex-wrap justify-between">
       <img
@@ -31,18 +45,19 @@ const ProductInfo = ({
             ৳ 58.00
           </span>
         </div>
-        <div className="flex flex-wrap gap-3 align-center">
+
+        
+        {/* <div className="flex flex-wrap gap-3 align-center">
           <QuantityButton />
 
           <Link to="checkout">
             <button class="flex flex-wrap items-center py-2 px-4 text-lg rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700">
               <i class="fas fa-cart-plus"></i> &nbsp; Add To Cart
             </button>
-          </Link>
-        </div>
+          </Link> */}
+        {/* </div> */}
       </div>
     </div>
   );
-};
-
+        }
 export default ProductInfo;

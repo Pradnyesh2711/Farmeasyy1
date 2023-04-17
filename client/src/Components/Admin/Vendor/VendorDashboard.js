@@ -8,10 +8,9 @@ const VendorDashboard = () => {
     <>
   
 
-      <div className="grid grid-cols-12 gap-6 mt-6">
+   
         <RecentCustomers />
-        
-      </div>
+
     </>
   );
 };
