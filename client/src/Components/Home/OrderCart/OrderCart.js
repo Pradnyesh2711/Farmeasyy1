@@ -11,7 +11,7 @@ const products = [
     href: '#',
     color: 'Salmon',
     price: '90.00',
-    quantity: 1,
+    quantity: 8,
     imageSrc:
       'https://wpbingosite.com/wordpress/fuho/wp-content/uploads/2020/12/Image-36-1-480x480.jpg',
     imageAlt:
@@ -120,7 +120,7 @@ const OrderCart = ({ open, setOpen }) => {
                                     <div className="border border-gray-300 rounded">
                                       <i className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
                                       <span className="mx-2 text-center w-1 text-gray-900">
-                                        {product.quantity}
+                                      687
                                       </span>
 
                                       <i className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
