@@ -1,7 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+
+
+
 
 const Checkout = () => {
+  const [amount,setAmount]=useState(3);
+  const setDecrease=()=>{
+    amount>1 ?setAmount(amount -1):setAmount(1);
+
+
+  }
+const setIncrease=()=>{
+  setAmount(amount + 1);
+
+}
+
   return (
     <div className="flex justify-center my-6">
       <div className="flex flex-col w-full p-8 text-gray-800 bg-white pin-r pin-y md:w-4/5 lg:w-4/5">
@@ -50,40 +66,37 @@ const Checkout = () => {
                     <p className="mb-2 ">Potato</p>
                     <form action="" method="POST">
                       <button type="submit" className="text-gray-700">
-                        {/* <small>Structural (Fabrication)</small> */}
+                       
                       </button>
                     </form>
                   </a>
                 </td>
                 <td className="justify-center md:justify-end md:flex md:mt-8">
-                  <div className="flex-1 flex items-end justify-between text-sm">
-                    <div className="border border-gray-400 rounded">
-                      <i className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-medium text-teal-600"></i>
-                      <input
-                        className="mx-2 text-center w-2 font-medium text-gray-800"
-                        type="text"
-                        value="1"
-                      />
+                <div className="flex-1 flex items-end justify-between text-sm">
+                                    <div className="border border-gray-300 rounded">
+                                      <i onClick={setIncrease} className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600">
+                                      </i>
+                                      <span className="mx-2 text-center w-1 text-gray-900">
+                                        {amount}
+                                      </span>
 
-                      <i className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-medium text-teal-600"></i>
-                    </div>
-                  </div>
+                                      <i onClick={setDecrease} className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
+                                    </div>
+
+                                    
+                                  </div>
+                                
                 </td>
-                <td className="text-right px-5 md:table-cell">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-gray-00"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                    />
-                  </svg>
+                <td>
+                
+                  <div className="flex">
+                                      <button
+                                        type="button"
+                                        className="font-medium tracking-wide text-teal-600 hover:text-teal-800"
+                                      >
+                                        Remove
+                                      </button>
+                                    </div>
                 </td>
                 <td className="hidden text-right md:table-cell">
                   <span className="text-sm lg:text-base font-medium">
@@ -115,34 +128,31 @@ const Checkout = () => {
                   </form>
                 </td>
                 <td className="justify-center md:justify-end md:flex md:mt-8">
-                  <div className="flex-1 flex items-end justify-between text-sm">
-                    <div className="border border-gray-400 rounded">
-                      <i className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-medium text-teal-600"></i>
-                      <input
-                        className="mx-2 text-center w-2 font-medium text-gray-800"
-                        type="text"
-                        value="1"
-                      />
+                <div className="flex-1 flex items-end justify-between text-sm">
+                                    <div className="border border-gray-300 rounded">
+                                      <i onClick={setIncrease} className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600">
+                                      </i>
+                                      <span className="mx-2 text-center w-1 text-gray-900">
+                                        {amount}
+                                      </span>
 
-                      <i className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-medium text-teal-600"></i>
-                    </div>
-                  </div>
+                                      <i onClick={setDecrease} className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
+                                    </div>
+
+                                    
+                                  </div>
+                                
                 </td>
-                <td className="text-right px-5 md:table-cell">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-gray-00"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                    />
-                  </svg>
+               
+                <td>
+                <div className="flex">
+                                      <button
+                                        type="button"
+                                        className="font-medium tracking-wide text-teal-600 hover:text-teal-800"
+                                      >
+                                        Remove
+                                      </button>
+                                    </div>
                 </td>
                 <td className="hidden text-right md:table-cell">
                   <span className="text-sm lg:text-base font-medium">
@@ -174,34 +184,31 @@ const Checkout = () => {
                   </form>
                 </td>
                 <td className="justify-center md:justify-end md:flex md:mt-8">
-                  <div className="flex-1 flex items-end justify-between text-sm">
-                    <div className="border border-gray-400 rounded">
-                      <i className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-medium text-teal-600"></i>
-                      <input
-                        className="mx-2 text-center w-2 font-medium text-gray-800"
-                        type="text"
-                        value="1"
-                      />
+                <div className="flex-1 flex items-end justify-between text-sm">
+                                    <div className="border border-gray-300 rounded">
+                                      <i onClick={setIncrease} className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600">
+                                      </i>
+                                      <span className="mx-2 text-center w-1 text-gray-900">
+                                        {amount}
+                                      </span>
 
-                      <i className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-medium text-teal-600"></i>
-                    </div>
-                  </div>
+                                      <i onClick={setDecrease} className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
+                                    </div>
+
+                                    
+                                  </div>
+                                
                 </td>
-                <td className="text-right px-5 md:table-cell">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-gray-00"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                    />
-                  </svg>
+
+                <td>
+                <div className="flex">
+                                      <button
+                                        type="button"
+                                        className="font-medium tracking-wide text-teal-600 hover:text-teal-800"
+                                      >
+                                        Remove
+                                      </button>
+                                    </div>
                 </td>
                 <td className="hidden text-right md:table-cell">
                   <span className="text-sm lg:text-base font-medium">
@@ -325,7 +332,7 @@ const Checkout = () => {
                       checked
                     />
                     <span className="ml-2 text-gray-800 font-medium">
-                      Cash On Delivery
+                      Cash On Delivery 
                     </span>
                   </label>
                   <hr />
