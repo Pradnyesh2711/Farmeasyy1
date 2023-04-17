@@ -3,15 +3,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Dialog, Transition } from '@headlessui/react';
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const products = [
+
+ 
     {
       id: 1,
       name: 'Onions', 
       href: '#',
       color: 'Salmon',
       price: '90.00',
-      quantity: 1,
+      quantity: 8,
       imageSrc:
         'https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51v2ozMXy8L._SX522_.jpg',
       imageAlt:
@@ -33,6 +36,16 @@ const products = [
   ];
 
 const WishList = ({ open, setOpen }) => {
+  const [amount,setAmount]=useState(3);
+  const setDecrease=()=>{
+    amount>1 ?setAmount(amount -1):setAmount(1);
+
+
+  }
+const setIncrease=()=>{
+  setAmount(amount + 1);
+
+}
     return (
         <div>
             <Transition.Root show={open} as={Fragment}>
@@ -118,12 +131,12 @@ const WishList = ({ open, setOpen }) => {
                                   </div>
                                   <div className="flex-1 flex items-end justify-between text-sm">
                                     <div className="border border-gray-300 rounded">
-                                      <i className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
+                                      <i onClick={setIncrease}  className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
                                       <span className="mx-2 text-center w-1 text-gray-900">
-                                        {product.quantity}
+                                        {amount}
                                       </span>
 
-                                      <i className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
+                                      <i onClick={setDecrease} className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
                                     </div>
 
                                     <div className="flex">
