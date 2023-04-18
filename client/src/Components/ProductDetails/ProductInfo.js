@@ -2,40 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import QuantityButton from '../Common/QuantityButton';
 import ShowRating from '../Common/ShowRating';
-import { useState } from 'react';
-import { useEffect } from 'react';
-
-const ProductInfo =()=> {
-  function home(){
-    fetch('http://localhost:4000/api/allorders')
-     .then(response => response.json())
-          .then(data => setActivity(data))
-    
-    }      
- const[records,setActivity]=useState([]);
-   
-
-useEffect(()=>{home()});
-const [amount,setAmount]=useState(3);
-
- const setDecrease=()=>{
-    amount>1 ?setAmount(amount -1):setAmount(1);
+import {useState } from 'react'
 
 
-  }
-const setIncrease=()=>{
-  setAmount(amount + 1);
-
-}
-return (
-{records.map((record) => {
-
-
+const ProductInfo = ({
+  product: { image, brand, description, totalReview },
+}) => {
+  return (
     <div className="mx-auto flex flex-wrap justify-between">
       <img
         alt="ecommerce"
         className="lg:w-1/3 w-full lg:h-auto h-64 object-cover object-center rounded"
-        src={record.image}
+        src={image}
       />
       <div className="lg:w-2/3 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
         <h1 className="text-teal-500 text-3xl font-display title-font font-medium mb-2">
@@ -55,41 +33,30 @@ return (
             ৳ 58.00
           </span>
         </div>
-        <td className="justify-center md:justify-end md:flex md:mt-8">
-                <div className="flex-1 flex items-end justify-between text-sm">
+        <div className="flex flex-wrap gap-3 align-center">
+        <div className="flex-1 flex items-end justify-between text-sm">
                                     <div className="border border-gray-300 rounded">
-                                      <i onClick={setIncrease} className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600">
+                                      <i className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600">
                                       </i>
                                       <span className="mx-2 text-center w-1 text-gray-900">
-                                        {amount}
+                                       
                                       </span>
 
-                                      <i onClick={setDecrease} className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
+                                      <i  className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
                                     </div>
 
                                     
                                   </div>
-                                
-                </td>
-              })};
-               
-                <td>
-                
-                  <div className="flex">
-                                      <button
-                                        type="button"
-                                        className="font-medium tracking-wide text-teal-600 hover:text-teal-800"
-                                      >
-                                        Remove
-                                      </button>
-                                    </div>
-                </td>
-        
-      
+          <Link to="checkout">
+            <button class="flex flex-wrap items-center py-2 px-4 text-lg rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700">
+              <i class="fas fa-cart-plus"></i> &nbsp; Add To Cart
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
-
-   );
+    
+  );
 };
 
 export default ProductInfo;

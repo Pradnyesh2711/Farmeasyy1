@@ -30,6 +30,9 @@ const Navigation = () => {
           <Route path="/checkout">
             <CheckoutPage />
           </Route>
+           {/* <Route path="/checkout">
+            <CheckoutPage />
+          </Route> */}
           <Route exact path="/productDetails">
             <ProductDetails />
           </Route>

@@ -143,6 +143,7 @@ const setIncrease=()=>{
                                       <button
                                         type="button"
                                         className="font-medium tracking-wide text-teal-600 hover:text-teal-800"
+                                        
                                       >
                                         Remove
                                       </button>
