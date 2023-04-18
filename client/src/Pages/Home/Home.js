@@ -24,32 +24,6 @@ const Home = () => {
  <VendorCTA />
  <Footer /> 
 
-{/* 
-    <div class="flex h-screen justify-center items-center flex-col">
-    <div
-        class="w-full h-screen bg-[url('https://placekitten.com/1400')] bg-cover bg-center">
-        <div class="w-full h-full flex  justify-center items-center backdrop-brightness-50">
-                <span class="text-white text-4xl w-1/2 text-center">Here is an example of black overlay on an image</span>
-        </div>
-    </div>
-</div>
-      <div
-        className="min-h-auto lg:min-h-screen bg-cover bg-no-repeat bg-center bg-darken backdrop-brightness-50"
-        style={{
-          backgroundImage: `url(https://thumbs.dreamstime.com/b/empty-wooden-photo-frame-farm-background-empty-wooden-photo-frame-paddy-farm-background-111650526.jpg)`,
-          
-        }}
-      >
-        
-       
-       
-       
-      </div>
-     
-    
-     
-    
-      */}
     </>    
     
     
