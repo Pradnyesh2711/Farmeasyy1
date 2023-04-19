@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import products from '../../Data/products';
-import axios from 'react';
+import products from '../../Data/products';
 
 const Products = () => {
-  function addToCart() {
-    const newItem = {
-      id: product.id,
-      name: product.name,
-      price: product.price,
-    };
-  }
+
+
   function home(){
     fetch('http://localhost:4000/api/products')
      .then(response => response.json())
@@ -20,27 +14,6 @@ const Products = () => {
     const[records,setActivity]=useState([]);
     
     useEffect(()=>{home()});
-
-    function ProductDetails(props) {
-      const [product, setProduct] = useState({});
-      const [loading, setLoading] = useState(true);
-    
-      useEffect(() => {
-        // Fetch product data from API
-        axios.get(`http://localhost:4000/api/products/${props.productId}`).then((response) => {
-          setProduct(response.data);
-          setLoading(false);
-        });
-      }, []);
-    
-
-        const cartItems = JSON.parse(localStorage.getItem("cart") || "[]");
-        cartItems.push(newItem);
-        localStorage.setItem("cart", JSON.stringify(cartItems));
-    
-        // Update cart icon in navigation bar
-        props.updateCartItemCount(cartItems.length);
-      }
       return (   
     
  
@@ -151,13 +124,12 @@ const Products = () => {
                       </svg>
                     </button>
                   </div>
-                  <button onClick={addToCart} className="flex py-2 px-3 text-sm rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700">
+                  
+                  <Link to="/products?_name=Tomato">
+                    <button className="flex py-2 px-3 text-sm rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700">
                       Add to Cart
                     </button>
-     
-                  {/* <Link to="/productDetails">
-                    
-                  </Link> */}
+                  </Link>
                 </div>
               </Link>
             </div>
