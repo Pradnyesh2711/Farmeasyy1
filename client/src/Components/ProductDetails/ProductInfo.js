@@ -1,98 +1,62 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import QuantityButton from '../Common/QuantityButton';
 import ShowRating from '../Common/ShowRating';
 import {useState } from 'react'
-import { useParams } from 'react-router-dom';
-
-// const ProductInfo =()=>{
-//  const {id}=useParams();
- 
-//  useEffect(()=>{
 
 
-  
-//  })
-
-//   return (
-//     <div className="mx-auto flex flex-wrap justify-between">
-//       <img
-//         alt="ecommerce"
-//         className="lg:w-1/3 w-full lg:h-auto h-64 object-cover object-center rounded"
-//         src={image}
-//       />
-//       <div className="lg:w-2/3 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-//         <h1 className="text-teal-500 text-3xl font-display title-font font-medium mb-2">
-//           The Catcher in the Rye
-//         </h1>
-//         <h2 className="text-sm title-font text-gray-800 tracking-widest mb-2">
-//           Brand: {brand}
-//         </h2>
-//         <div className="mb-2">
-//           <ShowRating value={4} />
-//         </div>
-//         <p className="leading-relaxed tracking-wide text-gray-800 font-sans h-20 overflow-hidden">
-//           {description}
-//         </p>
-//         <div className="flex mt-4 items-center pb-4 border-b-2 border-gray-100 mb-4">
-//           <span className="title-font font-medium text-2xl text-gray-900">
-//             ৳ 58.00
-//           </span>
-//         </div>
-//         <div className="flex flex-wrap gap-3 align-center">
-//         <div className="flex-1 flex items-end justify-between text-sm">
-//                                     <div className="border border-gray-300 rounded">
-//                                       <i className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600">
-//                                       </i>
-//                                       <span className="mx-2 text-center w-1 text-gray-900">
+const ProductInfo = ({
+  product: { image, brand, description, totalReview },
+}) => {
+  return (
+    <div className="mx-auto flex flex-wrap justify-between">
+      <img
+        alt="ecommerce"
+        className="lg:w-1/3 w-full lg:h-auto h-64 object-cover object-center rounded"
+        src={image}
+      />
+      <div className="lg:w-2/3 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+        <h1 className="text-teal-500 text-3xl font-display title-font font-medium mb-2">
+          The Catcher in the Rye
+        </h1>
+        <h2 className="text-sm title-font text-gray-800 tracking-widest mb-2">
+          Brand: {brand}
+        </h2>
+        <div className="mb-2">
+          <ShowRating value={4} />
+        </div>
+        <p className="leading-relaxed tracking-wide text-gray-800 font-sans h-20 overflow-hidden">
+          {description}
+        </p>
+        <div className="flex mt-4 items-center pb-4 border-b-2 border-gray-100 mb-4">
+          <span className="title-font font-medium text-2xl text-gray-900">
+            ৳ 58.00
+          </span>
+        </div>
+        <div className="flex flex-wrap gap-3 align-center">
+        <div className="flex-1 flex items-end justify-between text-sm">
+                                    <div className="border border-gray-300 rounded">
+                                      <i className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600">
+                                      </i>
+                                      <span className="mx-2 text-center w-1 text-gray-900">
                                        
-//                                       </span>
+                                      </span>
 
-//                                       <i  className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
-//                                     </div>
+                                      <i  className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
+                                    </div>
 
                                     
-//                                   </div>
-//           <Link to="checkout">
-//             <button class="flex flex-wrap items-center py-2 px-4 text-lg rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700">
-//               <i class="fas fa-cart-plus"></i> &nbsp; Add To Cart
-//             </button>
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-    
-//   );
-//};
-
-
-
-function App() {
-  const [data, setData] = useState(null);
-  const [id, setId] = useState();
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(`http://localhost:4000/api/products/${id}`);
-      const jsonData = await response.json();
-      setData(jsonData);
-    }
-    fetchData();
-  }, [id]);
-
-  return (
-    <div>
-      <input type="text" value={id} onChange={e => setId(e.target.value)} />
-      {data && (
-        <div>
-          <p>ID: {data.id}</p>
-          <p>Name: {data.name}</p>
-          <p>Description: {data.description}</p>
+                                  </div>
+          <Link to="checkout">
+            <button class="flex flex-wrap items-center py-2 px-4 text-lg rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700">
+              <i class="fas fa-cart-plus"></i> &nbsp; Add To Cart
+            </button>
+          </Link>
         </div>
-      )}
+      </div>
     </div>
+    
   );
-}
+};
 
-export default App;
-
+export default ProductInfo;

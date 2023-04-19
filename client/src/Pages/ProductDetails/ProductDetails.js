@@ -5,8 +5,18 @@ import NavBar from '../../Components/Home/NavBar/NavBar';
 import Menu from '../../Components/ProductDetails/Menu';
 import ProductInfo from '../../Components/ProductDetails/ProductInfo';
 import productsData from '../../Data/products';
-
+import { useState } from 'react';
 const ProductDetails = () => {
+  function home(){
+    fetch('http://localhost:4000/api/products')
+     .then(response => response.json())
+          .then(data => setActivity(data))
+    
+    }      
+    const[records,setActivity]=useState([]);
+    
+    useEffect(()=>{home()});
+
   const product = productsData[1];
   useEffect(() => {
     window.scrollTo(0, 0);
