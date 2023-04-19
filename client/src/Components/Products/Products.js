@@ -125,7 +125,7 @@ const Products = () => {
                     </button>
                   </div>
                   
-                  <Link to="/products?_name=Tomato">
+                  <Link to="/productDetails">
                     <button className="flex py-2 px-3 text-sm rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700">
                       Add to Cart
                     </button>
