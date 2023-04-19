@@ -17,7 +17,7 @@ const ProductDetails = () => {
     
     useEffect(()=>{home()});
 
-  const product = productsData[1];
+  const product = productsData[sessionStorage.getItem("selected_post")];
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

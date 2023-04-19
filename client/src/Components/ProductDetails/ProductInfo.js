@@ -6,7 +6,7 @@ import {useState } from 'react'
 
 
 const ProductInfo = ({
-  product: { image, brand, description, totalReview },
+  product: {name,image, brand, description, totalReview },
 }) => {
   return (
     <div className="mx-auto flex flex-wrap justify-between">
@@ -17,10 +17,10 @@ const ProductInfo = ({
       />
       <div className="lg:w-2/3 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
         <h1 className="text-teal-500 text-3xl font-display title-font font-medium mb-2">
-          The Catcher in the Rye
+        {name}
         </h1>
         <h2 className="text-sm title-font text-gray-800 tracking-widest mb-2">
-          Brand: {brand}
+          Category: {brand}
         </h2>
         <div className="mb-2">
           <ShowRating value={4} />

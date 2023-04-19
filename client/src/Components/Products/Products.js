@@ -6,13 +6,18 @@ const Products = () => {
 
 
   function home(){
+    
+    
+
     fetch('http://localhost:4000/api/products')
      .then(response => response.json())
           .then(data => setActivity(data))
     
     }      
     const[records,setActivity]=useState([]);
-    
+    function selectproduct(serial){
+      sessionStorage.setItem("selected_post", serial);
+    }
     useEffect(()=>{home()});
       return (   
     
@@ -44,7 +49,7 @@ const Products = () => {
 
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 
-          {records.map((record) => (
+          {records.map((record,index) => (
             <div key={record.id} className="group shadow-4xl">
               <Link to="/productDetails">
                 <div className="w-full min-h-80 bg-blue-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
@@ -126,7 +131,7 @@ const Products = () => {
                   </div>
                   
                   <Link to="/productDetails">
-                    <button className="flex py-2 px-3 text-sm rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700">
+                    <button onClick={()=>selectproduct(index++)} className="flex py-2 px-3 text-sm rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700">
                       Add to Cart
                     </button>
                   </Link>

@@ -7,6 +7,7 @@ const productsData = [
         "description": "Good quality onions for you.",
         "price": 54,
         "rating": 4,
+        "serial":1,
         "totalReview": 12,
         "category": "organic",
         "stock": 594,
