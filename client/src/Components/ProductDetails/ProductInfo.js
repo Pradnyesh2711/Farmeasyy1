@@ -3,11 +3,26 @@ import { Link } from 'react-router-dom';
 import QuantityButton from '../Common/QuantityButton';
 import ShowRating from '../Common/ShowRating';
 import {useState } from 'react'
+// function addProductToCart() {
+//   localStorage.setItem('id', product._id);
+//   localStorage.setItem('name', product.name);
+//   localStorage.setItem('price', );
+//   localStorage.setItem('img', );
+//   localStorage.setItem('description', );
+// }
+const ProductInfo = ({name,image, brand, description, totalReview })=>{
+ 
+  function addtocart(){
+    var ic=Number(sessionStorage.getItem("itemCount"));
+    sessionStorage.setItem("itemCount",ic+1);
+  
+    sessionStorage.setItem("itemNumber_"+(ic+1),sessionStorage.getItem("selected_post"));
+   
+  }
 
 
-const ProductInfo = ({
-  product: {name,image, brand, description, totalReview },
-}) => {
+
+
   return (
     <div className="mx-auto flex flex-wrap justify-between">
       <img
@@ -45,10 +60,11 @@ const ProductInfo = ({
                                       <i  className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
                                     </div>
 
-                                    
+                     
                                   </div>
+                                 
           <Link to="checkout">
-            <button class="flex flex-wrap items-center py-2 px-4 text-lg rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700">
+            <button onClick={addtocart} class="flex flex-wrap items-center py-2 px-4 text-lg rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700">
               <i class="fas fa-cart-plus"></i> &nbsp; Add To Cart
             </button>
           </Link>
