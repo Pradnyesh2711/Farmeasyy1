@@ -10,7 +10,7 @@ import ShopCard from '../../Components/Home/ShopCard/ShopCard';
 import VendorCTA from '../../Components/Home/VendorCTA/VendorCTA';
 
 const Home = () => {
-
+   sessionStorage.setItem("itemCount",-1);
 
   return(   
 
