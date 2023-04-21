@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-
+import { useEffect } from 'react';
+import productsData from '../../Data/products';
 
 
 
@@ -18,7 +19,24 @@ const setIncrease=()=>{
 
 }
 
-  return (
+function home(){
+    
+    
+
+  fetch('http://localhost:4000/api/products')
+   .then(response => response.json())
+        .then(data => setActivity(data))
+  
+  }      
+  const[records,setActivity]=useState([]);
+  function selectproduct(serial){
+    sessionStorage.setItem("selected_post", serial);
+  }
+  useEffect(()=>{home()});
+
+//const product = productsData[Number(sessionStorage.getItem("itemNumber_"+sessionStorage.getItem("itemCount")))];
+
+return (
     <div className="flex justify-center my-6">
       <div className="flex flex-col w-full p-8 text-gray-800 bg-white pin-r pin-y md:w-4/5 lg:w-4/5">
         <div className="flex-1">
@@ -26,14 +44,14 @@ const setIncrease=()=>{
             <thead>
               <tr className="h-12 font-sans text-gray-800 text-lg border border-teal-300 border-t-0 border-l-0 border-r-0">
                 <th className="hidden text-left md:table-cell font-medium text-teal-600">
-                  Product Image
+                  {productsData[0]._id}
                 </th>
                 <th className="text-left font-medium text-teal-600">
                   Product Details
                 </th>
                 <th className="text-left pl-5 lg:pl-8">
                   <span className="inline font-medium text-teal-600">
-                    Quantity
+                    
                   </span>
                 </th>
                 <th className="text-right lg:text-left md:table-cell font-medium text-teal-600">
@@ -47,6 +65,10 @@ const setIncrease=()=>{
                 </th>
               </tr>
             </thead>
+            {records.map((record,index) => {
+              if(index<=Number(sessionStorage.getItem("itemCount"))){
+const product = productsData[Number(sessionStorage.getItem("itemNumber_"+index++))];
+                return(
             <tbody>
               <tr>
                 <td className="pt-2"> </td>
@@ -55,7 +77,7 @@ const setIncrease=()=>{
                 <td className="hidden pb-4 md:table-cell">
                   <a href="#0">
                     <img
-                      src="https://www.jiomart.com/images/product/600x600/590000090/potato-1-kg-product-images-o590000090-p590000090-0-202207291750.jpg"
+                      src={product.image}
                       className="w-20 rounded"
                       alt="Thumbnail"
                     />
@@ -110,118 +132,12 @@ const setIncrease=()=>{
                 </td>
               </tr>
               <tr>
-                <td className="hidden pb-4 md:table-cell">
-                  <a href="#0">
-                    <img
-                      src="https://jugais.com/wp-content/uploads/2020/07/tomate-1.jpg"
-                      className="w-20 rounded"
-                      alt="Thumbnail"
-                    />
-                  </a>
-                </td>
-                <td>
-                  <p className="mb-2">Tomato</p>
-                  <form action="" method="POST">
-                    <button type="submit" className="text-gray-700">
-                      <small>Overhead Doors</small>
-                    </button>
-                  </form>
-                </td>
-                <td className="justify-center md:justify-end md:flex md:mt-8">
-                <div className="flex-1 flex items-end justify-between text-sm">
-                                    <div className="border border-gray-300 rounded">
-                                      <i onClick={setIncrease} className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600">
-                                      </i>
-                                      <span className="mx-2 text-center w-1 text-gray-900">
-                                        {amount}
-                                      </span>
-
-                                      <i onClick={setDecrease} className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
-                                    </div>
-
-                                    
-                                  </div>
-                                
-                </td>
                
-                <td>
-                <div className="flex">
-                                      <button
-                                        type="button"
-                                        className="font-medium tracking-wide text-teal-600 hover:text-teal-800"
-                                      >
-                                        Remove
-                                      </button>
-                                    </div>
-                </td>
-                <td className="hidden text-right md:table-cell">
-                  <span className="text-sm lg:text-base font-medium">
-                    ৳ 9,600.01
-                  </span>
-                </td>
-                <td className="text-right">
-                  <span className="text-sm lg:text-base font-medium">
-                    ৳ 19,800.03
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td className="hidden pb-4 md:table-cell">
-                  <a href="#0">
-                    <img
-                      src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51v2ozMXy8L._SX522_.jpg"
-                      className="w-20 rounded"
-                      alt="Thumbnail"
-                    />
-                  </a>
-                </td>
-                <td>
-                  <p className="mb-2">Onion</p>
-                  <form action="" method="POST">
-                    <button type="submit" className="text-gray-700">
-                      <small>Framing (Wood)</small>
-                    </button>
-                  </form>
-                </td>
-                <td className="justify-center md:justify-end md:flex md:mt-8">
-                <div className="flex-1 flex items-end justify-between text-sm">
-                                    <div className="border border-gray-300 rounded">
-                                      <i onClick={setIncrease} className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600">
-                                      </i>
-                                      <span className="mx-2 text-center w-1 text-gray-900">
-                                        {amount}
-                                      </span>
-
-                                      <i onClick={setDecrease} className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
-                                    </div>
-
-                                    
-                                  </div>
-                                
-                </td>
-
-                <td>
-                <div className="flex">
-                                      <button
-                                        type="button"
-                                        className="font-medium tracking-wide text-teal-600 hover:text-teal-800"
-                                      >
-                                        Remove
-                                      </button>
-                                    </div>
-                </td>
-                <td className="hidden text-right md:table-cell">
-                  <span className="text-sm lg:text-base font-medium">
-                    ৳ 1.50
-                  </span>
-                </td>
-                <td className="text-right">
-                  <span className="text-sm lg:text-base font-medium">
-                    ৳ 7.50
-                  </span>
-                </td>
               </tr>
             </tbody>
+                );
+              }
+            })}
           </table>
           <hr className="pb-6 mt-6" />
           <div className="my-4 mt-6 -mx-2 lg:flex">
