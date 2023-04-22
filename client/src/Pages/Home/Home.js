@@ -19,11 +19,9 @@ const Home = () => {
  <NavBar />
  <Hero />
  <OfferCard />
-
     <ShopCard /> 
  <VendorCTA />
  <Footer /> 
-
     </>    
     
     
