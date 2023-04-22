@@ -8,6 +8,20 @@ import productsData from '../../Data/products';
 
 
 const Checkout = () => {
+
+
+
+function deletePost(x){
+  
+  const array=document.getElementsByTagName("li");
+  array[x].style.display="none";
+  for(var i=x;i<sessionStorage.getItem("itemCount");i++){
+    sessionStorage.setItem("itemNumber_"+i,sessionStorage.getItem("itemNumber_"+(Number(i)+1)));
+  }
+  sessionStorage.setItem("itemCount",Number(sessionStorage.getItem("itemCount"))-1);
+}
+
+
   const [amount,setAmount]=useState(3);
   const setDecrease=()=>{
     amount>1 ?setAmount(amount -1):setAmount(1);
@@ -65,11 +79,16 @@ return (
                 </th>
               </tr>
             </thead>
-            {records.map((record,index) => {
+         
+            {records.map((ind,index) => {
               if(index<=Number(sessionStorage.getItem("itemCount"))){
-const product = productsData[Number(sessionStorage.getItem("itemNumber_"+index++))];
+const product = productsData[Number(sessionStorage.getItem("itemNumber_"+index))];
+                
                 return(
-            <tbody>
+                 
+            
+               <li style={{"list-style":"none"}}>
+              <tbody>
               <tr>
                 <td className="pt-2"> </td>
               </tr>
@@ -114,6 +133,7 @@ const product = productsData[Number(sessionStorage.getItem("itemNumber_"+index++
                   <div className="flex">
                                       <button
                                         type="button"
+                                        onClick={()=>deletePost(index)}
                                         className="font-medium tracking-wide text-teal-600 hover:text-teal-800"
                                       >
                                         Remove
@@ -134,10 +154,17 @@ const product = productsData[Number(sessionStorage.getItem("itemNumber_"+index++
               <tr>
                
               </tr>
-            </tbody>
-                );
+               </tbody>
+              </li>
+         
+         
+              
+              );
+              
               }
             })}
+           
+           
           </table>
           <hr className="pb-6 mt-6" />
           <div className="my-4 mt-6 -mx-2 lg:flex">
