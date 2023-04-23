@@ -9,7 +9,7 @@ import productsData from '../../Data/products';
 
 const Checkout = () => {
 
-
+var index=-1; 
 
 function deletePost(x){
   
@@ -24,13 +24,17 @@ function deletePost(x){
 
   const [amount,setAmount]=useState(3);
   const setDecrease=()=>{
-    amount>1 ?setAmount(amount -1):setAmount(1);
+    amount>1 ?setAmount(amount -0.25):setAmount(1);
 
 
   }
 const setIncrease=()=>{
-  setAmount(amount + 1);
+const product =productsData[Number(sessionStorage.getItem("itemNumber_"+index))]
+const v=product.stock;
+  if (amount<v){
+  setAmount(amount + 0.25);
 
+}
 }
 
 function home(){
@@ -58,7 +62,7 @@ return (
             <thead>
               <tr className="h-12 font-sans text-gray-800 text-lg border border-teal-300 border-t-0 border-l-0 border-r-0">
                 <th className="hidden text-left md:table-cell font-medium text-teal-600">
-                  {productsData[0]._id}
+                  Image
                 </th>
                 <th className="text-left font-medium text-teal-600">
                   Product Details
@@ -104,7 +108,7 @@ const product = productsData[Number(sessionStorage.getItem("itemNumber_"+index))
                 </td>
                 <td>
                   <a href="#0">
-                    <p className="mb-2 ">Potato</p>
+                    <p className="mb-2 ">{product.name}</p>
                     <form action="" method="POST">
                       <button type="submit" className="text-gray-700">
                        
