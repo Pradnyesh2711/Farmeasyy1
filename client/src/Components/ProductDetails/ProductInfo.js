@@ -3,14 +3,9 @@ import { Link } from 'react-router-dom';
 import QuantityButton from '../Common/QuantityButton';
 import ShowRating from '../Common/ShowRating';
 import {useState } from 'react'
-// function addProductToCart() {
-//   localStorage.setItem('id', product._id);
-//   localStorage.setItem('name', product.name);
-//   localStorage.setItem('price', );
-//   localStorage.setItem('img', );
-//   localStorage.setItem('description', );
-// }
-const ProductInfo = ({name,image, brand, description, totalReview })=>{
+
+
+const ProductInfo = ({product:{name,image, brand, description,price, totalReview }})=>{
  
   function addtocart(){
     var ic=Number(sessionStorage.getItem("itemCount"));
@@ -19,9 +14,6 @@ const ProductInfo = ({name,image, brand, description, totalReview })=>{
     sessionStorage.setItem("itemNumber_"+(ic+1),sessionStorage.getItem("selected_post"));
    
   }
-
-
-
 
   return (
     <div className="mx-auto flex flex-wrap justify-between">
@@ -45,7 +37,7 @@ const ProductInfo = ({name,image, brand, description, totalReview })=>{
         </p>
         <div className="flex mt-4 items-center pb-4 border-b-2 border-gray-100 mb-4">
           <span className="title-font font-medium text-2xl text-gray-900">
-            ৳ 58.00
+            {price}
           </span>
         </div>
         <div className="flex flex-wrap gap-3 align-center">
