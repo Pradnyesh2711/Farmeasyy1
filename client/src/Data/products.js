@@ -2,7 +2,7 @@ const productsData = [
   
     {
         "_id": "643927fad611268b5627234f",
-        "name": "Onion",
+        "name": "Onion ",
         "image": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51v2ozMXy8L._SX522_.jpg",
         "description": "Good quality onions for you.",
         "price": 54,
@@ -10,7 +10,7 @@ const productsData = [
         "serial":0,
         "totalReview": 12,
         "category": "organic",
-        "stock": 594,
+        "stock": 5,
         "document": 96,
         "isDeliveryFree": true
     },
