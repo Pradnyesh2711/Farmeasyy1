@@ -3,6 +3,7 @@ const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 const authRouter = require('./api/routes/AuthRouter');
+const { collection } = require('./api/models/UserModel');
 const MongoClient=require('mongodb').MongoClient;
 require('dotenv').config();
 
@@ -66,4 +67,17 @@ app.get('/api/allorders',(req,resp3)=>{
     if(err) throw err
      resp3.send(result);
   });
+});
+
+app.get('/api/recommendations',(req,resp3)=>{
+  database.collection('recommendations').find({}).toArray((err,result)=>{
+    if(err) throw err
+     resp3.send(result);
+  });
+});
+
+app.post('/api/insert',async (req,resp3)=>{
+  let collection=await database.collection('products');
+  let query={_id: ObjectId(req.params.id)};
+  await collection.insertOne(req.body);
 });
