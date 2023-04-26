@@ -11,8 +11,12 @@ import VendorCTA from '../../Components/Home/VendorCTA/VendorCTA';
 
 const Home = () => {
    sessionStorage.setItem("itemCount",-1);
-
-  return(   
+   
+  navigator.geolocation.getCurrentPosition(function(position) {
+   console.log("Latitude is :", position.coords.latitude);
+   console.log("Longitude is :", position.coords.longitude);
+});
+ return(   
 
 <>
  <Header />
