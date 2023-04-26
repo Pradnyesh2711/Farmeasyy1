@@ -101,7 +101,7 @@ const product = productsData[Number(sessionStorage.getItem("itemNumber_"+index))
                 return(
                  
             
-                  <li style={{"list-style":"none"}}>
+                  // <li style={{"list-style":"none"}}>
               <tbody>
                 
               <tr>
@@ -119,7 +119,7 @@ const product = productsData[Number(sessionStorage.getItem("itemNumber_"+index))
                 </td>
                 <td>
                   <a href="#0">
-                    <p className="mb-2 ">{product.name}</p>
+                    <p className="mb- ">{product.name}</p>
                     <form action="" method="POST">
                       <button type="submit" className="text-gray-700">
                        
@@ -169,11 +169,19 @@ const product = productsData[Number(sessionStorage.getItem("itemNumber_"+index))
               <tr>
                
               </tr>
+              <div className="flex justify-between border-b">
+              <div className="lg:px-4 lg:py-2 m-1 text-lg lg:text-xl font-medium text-center text-gray-800">
+                Subtotal
+              </div>
+              <div className="lg:px-4 lg:py-2 m-1 lg:text-lg font-medium text-right text-gray-800">
+              {total(product.price,amount)}
+              </div>
+            </div>
            
                </tbody>
               
-               </li>
-         
+              //  </li>
+              
               
               );
               
@@ -301,7 +309,7 @@ const product = productsData[Number(sessionStorage.getItem("itemNumber_"+index))
                       className="form-radio h-5 w-5 text-gray-600"
                     />
                     <span className="ml-2 text-gray-800 font-medium">
-                      Bkash
+                      Gpay
                     </span>
                   </label>
                 </div>
@@ -317,66 +325,12 @@ const product = productsData[Number(sessionStorage.getItem("itemNumber_"+index))
                   Shipping and additionnal costs are calculated based on values
                   you have entered
                 </p>
-                <div className="flex justify-between border-b">
-                  <div className="lg:px-4 lg:py-2 m-1 text-lg lg:text-xl font-medium text-center text-gray-800">
-                    Subtotal
-                  </div>
-                  <div className="lg:px-4 lg:py-2 m-1 lg:text-lg font-medium text-center text-gray-800">
-                    ৳ 148,827.53
-                  </div>
-                </div>
-                <div className="flex justify-between pt-2 border-b">
-                  <div className="flex lg:px-4 lg:py-2 m-1 text-lg lg:text-xl font-medium text-teal-500">
-                    <form action="" method="POST">
-                      <button type="submit" className="mr-2 lg:mt-1">
-                        <svg
-                          aria-hidden="true"
-                          data-prefix="far"
-                          data-icon="trash-alt"
-                          className="w-4 text-red-600 hover:text-red-800"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 448 512"
-                        >
-                          <path
-                            fill="currentColor"
-                            d="M268 416h24a12 12 0 0012-12V188a12 12 0 00-12-12h-24a12 12 0 00-12 12v216a12 12 0 0012 12zM432 80h-82.41l-34-56.7A48 48 0 00274.41 0H173.59a48 48 0 00-41.16 23.3L98.41 80H16A16 16 0 000 96v16a16 16 0 0016 16h16v336a48 48 0 0048 48h288a48 48 0 0048-48V128h16a16 16 0 0016-16V96a16 16 0 00-16-16zM171.84 50.91A6 6 0 01177 48h94a6 6 0 015.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-112-48h24a12 12 0 0012-12V188a12 12 0 00-12-12h-24a12 12 0 00-12 12v216a12 12 0 0012 12z"
-                          />
-                        </svg>
-                      </button>
-                    </form>
-                    Coupon "90off"
-                  </div>
-                  <div className="lg:px-4 lg:py-2 m-1 lg:text-lg font-medium text-center text-green-600">
-                    ৳ -13,944.77
-                  </div>
-                </div>
-                <div className="flex justify-between pt-2 border-b">
-                  <div className="lg:px-4 lg:py-2 m-1 text-lg lg:text-xl font-medium text-center text-gray-800">
-                    New Subtotal
-                  </div>
-                  <div className="lg:px-4 lg:py-2 m-1 lg:text-lg font-medium text-center text-gray-800">
-                    ৳ 14,882.75
-                  </div>
-                </div>
-                <div className="flex justify-between pt-2 border-b">
-                  <div className="lg:px-4 lg:py-2 m-1 text-lg lg:text-xl font-medium text-center text-gray-800">
-                    Tax
-                  </div>
-                  <div className="lg:px-4 lg:py-2 m-1 lg:text-lg font-medium text-center text-gray-800">
-                    ৳ 2,976.55
-                  </div>
-                </div>
-                <div className="flex justify-between pt-2 border-b">
-                  <div className="lg:px-4 lg:py-2 m-1 text-lg lg:text-xl font-medium text-center text-gray-800">
-                    Total
-                  </div>
-                  <div className="lg:px-4 lg:py-2 m-1 lg:text-lg font-medium text-center text-gray-800">
-                    ৳ 17,859.3
-                  </div>
-                </div>
+              
+              
+              
                 <a href="#0">
                
-                  <a href="mailto:arjun.shinde@spit.ac.in?subject='order succesfull'&body='just opened'"  className="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-teal-500 rounded-full shadow item-center hover:bg-teal-700 focus:shadow-outline focus:outline-none">
+                <Link to="/orderHistory" className="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-teal-500 rounded-full shadow item-center hover:bg-teal-700 focus:shadow-outline focus:outline-none">
                     <svg
                       aria-hidden="true"
                       data-prefix="far"
@@ -392,8 +346,9 @@ const product = productsData[Number(sessionStorage.getItem("itemNumber_"+index))
                     </svg>
                     
                     <span className="ml-2 pt-1">Place Order</span>
+                    </Link>
                   </a>
-                </a>
+            
               </div>
             </div>
           </div>
