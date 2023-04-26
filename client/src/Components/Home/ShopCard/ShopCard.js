@@ -5,8 +5,15 @@ import shopCard from '../../../Data/vendor';
 
 
 const ShopCard = () => {
-  // const first6 = shopCard.slice(0, 6);
-  // const [shopCards, setShopCards] = useState(first6);
+  navigator.geolocation.getCurrentPosition(function(position) {
+    console.log("Latitude is :", position.coords.latitude);
+    console.log("Longitude is :", position.coords.longitude);
+ });
+
+
+
+
+
   function home(){
     fetch('http://localhost:4000/api/shops')
      .then(response => response.json())
@@ -32,7 +39,9 @@ const ShopCard = () => {
 
       {/* Shop cards */}
       <div className="cards flex flex-wrap justify-center">
-        {records.map((record) => (
+        {records.filter(function students(student){
+    return student.location === "Andheri East, Mumbai";
+      }).map((record) => (
           <div className="pb-4 m-6 rounded-lg shadow-3xl w-96 md:w-2/5 lg:w-1/4 bg-white">
             <img src={record.pic} className="rounded-t-lg" alt="" />
 
@@ -112,7 +121,7 @@ const ShopCard = () => {
               </Link>
             </div>
           </div>
-        ))}
+        ))};
       </div> 
 
       {/* More button */}
