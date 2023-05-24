@@ -42,27 +42,23 @@ const Item = ({ title, children }) => {
 
 export const Faq = () => {
   return (
-    <div class=" mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xlfont-sans text-gray-800 ">
-      <div class="">
-        <div class="space-y-4">
-          <Item title="The quick, brown fox jumps over a lazy dog?">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
-          </Item>
-          <Item title="The first mate and his Skipper too will do?">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
-          </Item>
-          <Item title="Is the Space Pope reptilian!?">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
-          </Item>
-          <Item title="How much money you got on you?">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
-          </Item>
+    <div class=" mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl ">
+        <div class="">
+          <div class="space-y-4">
+            <Item title="What is Farmeasy?">
+            Farmeasy is an online platform that allows farmers to sell their products directly to consumers, bypassing traditional middlemen like wholesalers and retailers.
+            </Item>
+            <Item title=" How does Farmeasy work?">
+            A Farmeasy works by providing a digital marketplace where farmers can list their products, set prices, and accept payments. Customers can browse the platform, search for products, and place orders directly with the farmers.
+            </Item>
+            <Item title="What kind of products can farmers sell on a Farmeasy Platform?">
+            Farmers can sell a wide variety of products on Farmeasy, including fresh produce, meat, dairy products, eggs, grains, and other agricultural commodities.
+            </Item>
+            <Item title=" How do farmers benefit from using aFarmeasy platform?">
+            Farmers can benefit from using Farmeasy in several ways. Firstly, they can sell their products directly to consumers, eliminating middlemen and increasing their profits. Secondly, they can reach a wider audience of potential customers, including those in distant locations. Finally, they can have greater control over the pricing and marketing of their products.
+            </Item>
+          </div>
         </div>
       </div>
-    </div>
   );
 };

@@ -14,11 +14,7 @@ const Menu = ({ product: { description, totalReview } }) => {
       tabName: "Description",
       component: <p className="text-gray-600 font-medium">{description}</p>,
     },
-    {
-      tabNumber: 2,
-      tabName: `Reviews (${totalReview ? totalReview : 0})`,
-      component: <Reviews />,
-    },
+   
     { tabNumber: 3, tabName: "Vendor Info", component: <VendorInfo /> },
     { tabNumber: 4, tabName: "FAQ", component: <Faq /> },
   ];

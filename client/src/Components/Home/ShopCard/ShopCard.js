@@ -25,7 +25,7 @@ const ShopCard = () => {
     useEffect(()=>{home()});
       return (
         <>
-     
+      <div className="w-full text-center py-8"></div>
     <div className="pb-10 pt-8 bg-teal-50">
       {/* Shop Card */}
       <div className="w-full text-center py-8">
