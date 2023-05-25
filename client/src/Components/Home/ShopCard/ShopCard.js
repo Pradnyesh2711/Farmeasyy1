@@ -33,14 +33,14 @@ const ShopCard = () => {
           Your Nearest Farmers
         </h1>
         <p className="font-sans text-base tracking-wide text-gray-700 mt-2">
-          Search for Fresh Products, Filter by your location
+          Search for Fresh Products
         </p>
       </div>
 
       {/* Shop cards */}
       <div className="cards flex flex-wrap justify-center">
         {records.filter(function students(student){
-    return student.location === "Andheri East, Mumbai";
+    return student.location=="Andheri West, Mumbai";
       }).map((record) => (
           <div className="pb-4 m-6 rounded-lg shadow-3xl w-96 md:w-2/5 lg:w-1/4 bg-white">
             <img src={record.pic} className="rounded-t-lg" alt="" />
