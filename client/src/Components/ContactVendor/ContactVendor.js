@@ -55,7 +55,7 @@ const ContactVendor = () => {
 var prod=elemN.value.toLowerCase();
   var number=elemY.value;
   let ind = thisdict[prod][0];
-  alert("Predicted price: "+emptylist[ind][number]);
+  alert("Predicted price for the item you asked is:-"+emptylist[ind][number]);
   }
   
   return (
