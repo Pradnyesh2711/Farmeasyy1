@@ -105,7 +105,22 @@ var prod=elemN.value.toLowerCase();
               className="mb-3  block text-sm py-3 px-4 rounded w-full outline-none border border-teal-400"
               required
             />
-
+          
+                  <option value="">Prediction Applicable for</option>
+        <option value="option1">coriander</option>
+        <option value="option2">potato</option>
+        <option value="option3">onion</option>
+        <option value="option4">fresh tomato</option>
+        <option value="option5">okra</option>
+        <option value="option6">cabbage</option>
+        <option value="option7">cucumber</option>
+        <option value="option8">carrot</option>
+        <option value="option9">pears</option>
+        <option value="option10">Apple</option>
+        <option value="option11">grapes</option>
+        <option value="option12">Mangoes</option>
+        <option value="option13">strawberries</option>
+        
             {/* <textarea
               name=""
               id=""
